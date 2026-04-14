@@ -6,8 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="Indie Revolutions — Self-distribution for the people. Connecting indie films with Renegades in every American town."/>
 <title>Indie Revolutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#080808;color:#f0ebe0;font-family:'Special Elite',Georgia,serif}
 input,textarea,select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(240,235,224,0.15);color:#f0ebe0;padding:14px 16px;font-size:15px;font-family:inherit;outline:none;box-sizing:border-box}
@@ -65,6 +67,11 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 .poster-strip{display:flex;gap:2px;overflow:hidden;height:280px;margin:0}
 .poster-strip img{width:25%;object-fit:cover;filter:grayscale(60%) contrast(1.1);transition:all 0.4s;opacity:0.7}
 .poster-strip img:hover{filter:grayscale(0%) contrast(1.2);opacity:1;transform:scale(1.02)}
+.poster-card{width:25%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:24px 16px;position:relative;overflow:hidden;transition:all 0.4s;opacity:0.8}
+.poster-card:hover{opacity:1;transform:scale(1.02)}
+.poster-card .poster-year{font-family:'Bebas Neue',serif;font-size:64px;color:rgba(240,235,224,0.07);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);letter-spacing:0.05em}
+.poster-card .poster-title{font-family:'Bebas Neue',serif;font-size:18px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.85);text-align:center;position:relative;z-index:1}
+.poster-card .poster-dir{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.35);margin-top:6px;position:relative;z-index:1}
 .film-grain{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .vignette{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)}
 .slate-num{font-size:11px;letter-spacing:0.3em;color:rgba(240,235,224,0.2);font-family:'Bebas Neue',serif;border:1px solid rgba(240,235,224,0.1);padding:3px 10px;display:inline-block;margin-bottom:12px}
@@ -76,6 +83,8 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
   .stats-bar{gap:32px}
   h1{font-size:clamp(48px,12vw,80px)}
   .poster-strip{height:180px}
+  .poster-card .poster-year{font-size:40px}
+  .poster-card .poster-title{font-size:13px}
 }
 
 /* VHS INTRO */
@@ -104,67 +113,6 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 .vhs-hint{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,235,224,0.2)}
 .rgb-shift{animation:rgbShift 8s ease-in-out infinite}
 @keyframes rgbShift{0%,100%{text-shadow:2px 2px 0 rgba(192,57,43,0.5),-1px 0 rgba(0,200,255,0.3)}50%{text-shadow:-2px 2px 0 rgba(192,57,43,0.6),2px 0 rgba(0,200,255,0.4)}}
-</style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#f0ebe0;font-family:Georgia,serif}
-input,textarea,select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(240,235,224,0.15);color:#f0ebe0;padding:14px 16px;font-size:15px;font-family:inherit;outline:none;box-sizing:border-box}
-select{background:#111}
-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,235,224,0.4);display:block;margin-bottom:8px}
-.btn{padding:16px 36px;background:#c0392b;border:none;color:#f0ebe0;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit;font-weight:bold}
-.btn:hover{background:#a93226}
-.btn-ghost{padding:16px 36px;background:transparent;border:1px solid rgba(240,235,224,0.25);color:rgba(240,235,224,0.6);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit}
-.btn-sm{padding:10px 20px;font-size:11px;letter-spacing:0.15em}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:1px solid rgba(240,235,224,0.1);flex-wrap:wrap;gap:16px;position:sticky;top:0;background:#0a0a0a;z-index:100}
-.nav-links{display:flex;gap:20px;font-size:11px;letter-spacing:0.12em;flex-wrap:wrap}
-.nav-links span{color:rgba(240,235,224,0.5);cursor:pointer;transition:color 0.2s}
-.nav-links span:hover{color:#f0ebe0}
-.page{max-width:900px;margin:0 auto;padding:80px 48px}
-.page-wide{max-width:1100px;margin:0 auto;padding:80px 48px}
-.page-narrow{max-width:620px;margin:0 auto;padding:80px 48px}
-.red{color:#c0392b}
-.muted{color:rgba(240,235,224,0.5)}
-h1{font-size:clamp(48px,8vw,96px);line-height:1.0;font-weight:normal;letter-spacing:-0.02em}
-h2{font-size:clamp(32px,5vw,64px);font-weight:normal;line-height:1.1}
-h3{font-size:22px;font-weight:normal}
-.tag{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:#c0392b;margin-bottom:24px;display:block}
-.field{margin-bottom:20px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
-.card{padding:32px;border-left:3px solid rgba(192,57,43,0.2);transition:border-color 0.2s;margin-bottom:2px}
-.card:hover{border-left-color:#c0392b}
-.divider{width:48px;height:2px;background:#c0392b;margin:48px 0}
-.hidden{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
-.badge{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#c0392b;border:1px solid rgba(192,57,43,0.3);padding:4px 10px;display:inline-block}
-.stats-bar{border-top:1px solid rgba(240,235,224,0.1);border-bottom:1px solid rgba(240,235,224,0.1);display:flex;justify-content:center;gap:80px;padding:32px 48px;flex-wrap:wrap}
-.stat{text-align:center}
-.stat-n{font-size:32px;color:#c0392b;font-style:italic}
-.stat-l{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.4);margin-top:4px}
-.oath-box{border:2px solid rgba(240,235,224,0.1);padding:28px;margin-bottom:20px;transition:all 0.3s}
-.oath-box.taken{border-color:#c0392b;background:rgba(192,57,43,0.06)}
-.founding{border:2px solid #c0392b;padding:40px;background:rgba(192,57,43,0.05);margin:60px 0}
-.how-step{border-top:1px solid rgba(192,57,43,0.3);padding-top:24px}
-.how-n{font-size:48px;color:rgba(192,57,43,0.2);font-style:italic;margin-bottom:16px}
-.film-card{border:1px solid rgba(240,235,224,0.08);padding:28px;background:rgba(255,255,255,0.02);transition:all 0.2s;margin-bottom:16px}
-.film-card:hover{border-color:rgba(192,57,43,0.4);background:rgba(192,57,43,0.04)}
-.town-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0392b;margin-right:8px}
-.map-town{padding:16px 20px;border-left:3px solid rgba(192,57,43,0.15);display:flex;justify-content:space-between;align-items:center;transition:all 0.2s;cursor:pointer}
-.map-town:hover{border-left-color:#c0392b;background:rgba(192,57,43,0.04)}
-.faq-item{border-bottom:1px solid rgba(240,235,224,0.08);padding:24px 0;cursor:pointer}
-.faq-q{font-size:17px;display:flex;justify-content:space-between;align-items:center}
-.faq-a{font-size:15px;line-height:1.8;color:rgba(240,235,224,0.6);margin-top:16px;display:none}
-.press-card{border:1px solid rgba(240,235,224,0.08);padding:28px;background:rgba(255,255,255,0.02)}
-.genre-btn{padding:8px 14px;font-size:11px;letter-spacing:0.1em;border:1px solid rgba(240,235,224,0.18);background:transparent;color:rgba(240,235,224,0.6);cursor:pointer;font-family:inherit;transition:all 0.15s}
-.genre-btn.selected{border-color:#c0392b;background:rgba(192,57,43,0.15);color:#c0392b}
-.roadmap-item{padding:32px 24px;border-top:3px solid rgba(240,235,224,0.1)}
-.roadmap-item.active{border-top-color:#c0392b;background:rgba(192,57,43,0.04)}
-@media(max-width:700px){
-nav{padding:16px 24px}
-.page,.page-wide,.page-narrow{padding:48px 24px}
-.grid2,.grid3,.grid4{grid-template-columns:1fr}
-.stats-bar{gap:32px}
-h1{font-size:clamp(36px,10vw,72px)}
-}
 </style>
 
 </head>
@@ -242,10 +190,26 @@ h1{font-size:clamp(36px,10vw,72px)}
   </div>
   <div style="margin-top:64px">
     <div class="poster-strip">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Nosferatu_poster.jpg/687px-Nosferatu_poster.jpg" alt="Nosferatu 1922"/>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Das_Cabinet_des_Dr._Caligari.jpg/543px-Das_Cabinet_des_Dr._Caligari.jpg" alt="Cabinet of Dr Caligari 1920"/>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Metropolis_%281927_film%29.jpg/550px-Metropolis_%281927_film%29.jpg" alt="Metropolis 1927"/>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Phantom_of_the_opera_1925_poster.jpg/500px-Phantom_of_the_opera_1925_poster.jpg" alt="Phantom of the Opera 1925"/>
+      <div class="poster-card" style="background:linear-gradient(160deg,#1a0a0a 0%,#2d1215 40%,#0d0d0d 100%)">
+        <span class="poster-year">1922</span>
+        <span class="poster-title">Nosferatu</span>
+        <span class="poster-dir">F.W. Murnau</span>
+      </div>
+      <div class="poster-card" style="background:linear-gradient(160deg,#0d0d1a 0%,#1a1a2e 40%,#0d0d0d 100%)">
+        <span class="poster-year">1920</span>
+        <span class="poster-title">Cabinet of<br>Dr. Caligari</span>
+        <span class="poster-dir">Robert Wiene</span>
+      </div>
+      <div class="poster-card" style="background:linear-gradient(160deg,#0d1a0d 0%,#1a2e1a 40%,#0d0d0d 100%)">
+        <span class="poster-year">1927</span>
+        <span class="poster-title">Metropolis</span>
+        <span class="poster-dir">Fritz Lang</span>
+      </div>
+      <div class="poster-card" style="background:linear-gradient(160deg,#1a1a0d 0%,#2e2e1a 40%,#0d0d0d 100%)">
+        <span class="poster-year">1925</span>
+        <span class="poster-title">Phantom of<br>the Opera</span>
+        <span class="poster-dir">Rupert Julian</span>
+      </div>
     </div>
     <div style="background:#c0392b;padding:8px 48px;display:flex;justify-content:space-between;align-items:center">
       <span style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(240,235,224,0.7)">Public domain classics — cinema before the gatekeepers</span>
@@ -706,6 +670,14 @@ function getCount(table, callback) {
   }).catch(function(e) { console.log('Count error:', e); });
 }
 
+// ── UTILS ──
+function esc(s) {
+  if(!s) return '';
+  var d = document.createElement('div');
+  d.appendChild(document.createTextNode(s));
+  return d.innerHTML;
+}
+
 // ── DATA ──
 var spotsLeft = 153;
 var oathTaken = false;
@@ -876,13 +848,13 @@ function renderNights() {
   var html = '';
   nightsData.forEach(function(n){
     html += '<div class="card">';
-    html += '<h3 style="margin-bottom:4px">'+n.film+'</h3>';
+    html += '<h3 style="margin-bottom:4px">'+esc(n.film)+'</h3>';
     var meta = [];
-    if(n.director) meta.push('dir. '+n.director);
-    if(n.year) meta.push(n.year);
-    if(meta.length) html += '<p style="font-size:12px;color:rgba(240,235,224,0.35);margin-bottom:16px">'+meta.join(' · ')+'</p>';
-    html += '<p style="font-size:17px;line-height:1.8;font-style:italic;margin-bottom:16px">"'+n.moment+'"</p>';
-    html += '<p style="font-size:11px;color:rgba(240,235,224,0.3)">'+n.name+' · '+n.town+'</p>';
+    if(n.director) meta.push('dir. '+esc(n.director));
+    if(n.year) meta.push(esc(n.year));
+    if(meta.length) html += '<p style="font-size:12px;color:rgba(240,235,224,0.35);margin-bottom:16px">'+meta.join(' &middot; ')+'</p>';
+    html += '<p style="font-size:17px;line-height:1.8;font-style:italic;margin-bottom:16px">&ldquo;'+esc(n.moment)+'&rdquo;</p>';
+    html += '<p style="font-size:11px;color:rgba(240,235,224,0.3)">'+esc(n.name)+' &middot; '+esc(n.town)+'</p>';
     html += '</div>';
   });
   document.getElementById('nights-list').innerHTML = html;
@@ -909,13 +881,13 @@ function renderVenues() {
   venuesData.forEach(function(v){
     html += '<div class="card">';
     html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px">';
-    html += '<div><h3 style="margin-bottom:4px">'+v.name+'</h3>';
-    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">📍 '+v.town+(v.address?' · '+v.address:'')+'</p></div>';
+    html += '<div><h3 style="margin-bottom:4px">'+esc(v.name)+'</h3>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">\uD83D\uDCCD '+esc(v.town)+(v.address?' &middot; '+esc(v.address):'')+'</p></div>';
     html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
-    if(v.type) html += '<span class="badge">'+v.type+'</span>';
-    if(v.capacity) html += '<span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.35);border:1px solid rgba(240,235,224,0.1);padding:4px 10px">~'+v.capacity+' seats</span>';
+    if(v.type) html += '<span class="badge">'+esc(v.type)+'</span>';
+    if(v.capacity) html += '<span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.35);border:1px solid rgba(240,235,224,0.1);padding:4px 10px">~'+esc(v.capacity)+' seats</span>';
     html += '</div></div>';
-    if(v.note) html += '<p style="font-size:14px;line-height:1.7;font-style:italic;color:rgba(240,235,224,0.55)">"'+v.note+'"</p>';
+    if(v.note) html += '<p style="font-size:14px;line-height:1.7;font-style:italic;color:rgba(240,235,224,0.55)">&ldquo;'+esc(v.note)+'&rdquo;</p>';
     html += '</div>';
   });
   document.getElementById('venues-list').innerHTML = html;
@@ -927,12 +899,12 @@ function renderFilms() {
   filmsData.forEach(function(f){
     html += '<div class="film-card">';
     html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:12px">';
-    html += '<div><h3 style="margin-bottom:4px">'+f.title+'</h3>';
-    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">dir. '+f.director+' · '+f.year+' · '+f.genre+'</p></div>';
+    html += '<div><h3 style="margin-bottom:4px">'+esc(f.title)+'</h3>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">dir. '+esc(f.director)+' &middot; '+esc(f.year)+' &middot; '+esc(f.genre)+'</p></div>';
     html += '<span class="badge" style="background:rgba(192,57,43,0.1)">On Tour</span>';
     html += '</div>';
-    html += '<p style="font-size:15px;line-height:1.7;color:rgba(240,235,224,0.6);margin-bottom:16px">'+f.synopsis+'</p>';
-    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">📍 Touring: '+f.towns+'</p>';
+    html += '<p style="font-size:15px;line-height:1.7;color:rgba(240,235,224,0.6);margin-bottom:16px">'+esc(f.synopsis)+'</p>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">\uD83D\uDCCD Touring: '+esc(f.towns)+'</p>';
     html += '</div>';
   });
   document.getElementById('films-list').innerHTML = html;
@@ -943,8 +915,8 @@ function renderHeatmap() {
   var html = '';
   townsData.forEach(function(t,i){
     html += '<div class="map-town">';
-    html += '<div><span class="town-dot"></span><span style="font-size:14px">'+t.city+'</span>';
-    if(t.trending) html += '<span style="margin-left:8px;font-size:10px;letter-spacing:0.15em;color:#c0392b;text-transform:uppercase">↑ rising</span>';
+    html += '<div><span class="town-dot"></span><span style="font-size:14px">'+esc(t.city)+'</span>';
+    if(t.trending) html += '<span style="margin-left:8px;font-size:10px;letter-spacing:0.15em;color:#c0392b;text-transform:uppercase">&uarr; rising</span>';
     html += '</div>';
     html += '<span style="font-size:13px;color:rgba(240,235,224,0.4)">'+t.count.toLocaleString()+'</span>';
     html += '</div>';
@@ -957,8 +929,8 @@ function renderFaq() {
   var html = '';
   faqData.forEach(function(f,i){
     html += '<div class="faq-item" onclick="toggleFaq('+i+')">';
-    html += '<div class="faq-q"><span>'+f.q+'</span><span id="faq-arrow-'+i+'" style="color:#c0392b;font-size:20px">+</span></div>';
-    html += '<div class="faq-a" id="faq-a-'+i+'">'+f.a+'</div>';
+    html += '<div class="faq-q"><span>'+esc(f.q)+'</span><span id="faq-arrow-'+i+'" style="color:#c0392b;font-size:20px">+</span></div>';
+    html += '<div class="faq-a" id="faq-a-'+i+'">'+esc(f.a)+'</div>';
     html += '</div>';
   });
   document.getElementById('faq-list').innerHTML = html;
