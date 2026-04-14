@@ -6,10 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="Indie Revolutions — Self-distribution for the people. Connecting indie films with Renegades in every American town."/>
 <title>Indie Revolutions</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet"/>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#080808;color:#f0ebe0;font-family:'Special Elite',Georgia,serif}
 input,textarea,select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(240,235,224,0.15);color:#f0ebe0;padding:14px 16px;font-size:15px;font-family:inherit;outline:none;box-sizing:border-box}
@@ -67,11 +65,6 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 .poster-strip{display:flex;gap:2px;overflow:hidden;height:280px;margin:0}
 .poster-strip img{width:25%;object-fit:cover;filter:grayscale(60%) contrast(1.1);transition:all 0.4s;opacity:0.7}
 .poster-strip img:hover{filter:grayscale(0%) contrast(1.2);opacity:1;transform:scale(1.02)}
-.poster-card{width:25%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:24px 16px;position:relative;overflow:hidden;transition:all 0.4s;opacity:0.8}
-.poster-card:hover{opacity:1;transform:scale(1.02)}
-.poster-card .poster-year{font-family:'Bebas Neue',serif;font-size:64px;color:rgba(240,235,224,0.07);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);letter-spacing:0.05em}
-.poster-card .poster-title{font-family:'Bebas Neue',serif;font-size:18px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.85);text-align:center;position:relative;z-index:1}
-.poster-card .poster-dir{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.35);margin-top:6px;position:relative;z-index:1}
 .film-grain{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .vignette{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)}
 .slate-num{font-size:11px;letter-spacing:0.3em;color:rgba(240,235,224,0.2);font-family:'Bebas Neue',serif;border:1px solid rgba(240,235,224,0.1);padding:3px 10px;display:inline-block;margin-bottom:12px}
@@ -83,8 +76,6 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
   .stats-bar{gap:32px}
   h1{font-size:clamp(48px,12vw,80px)}
   .poster-strip{height:180px}
-  .poster-card .poster-year{font-size:40px}
-  .poster-card .poster-title{font-size:13px}
 }
 
 /* VHS INTRO */
@@ -113,6 +104,67 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 .vhs-hint{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,235,224,0.2)}
 .rgb-shift{animation:rgbShift 8s ease-in-out infinite}
 @keyframes rgbShift{0%,100%{text-shadow:2px 2px 0 rgba(192,57,43,0.5),-1px 0 rgba(0,200,255,0.3)}50%{text-shadow:-2px 2px 0 rgba(192,57,43,0.6),2px 0 rgba(0,200,255,0.4)}}
+</style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#f0ebe0;font-family:Georgia,serif}
+input,textarea,select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(240,235,224,0.15);color:#f0ebe0;padding:14px 16px;font-size:15px;font-family:inherit;outline:none;box-sizing:border-box}
+select{background:#111}
+label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,235,224,0.4);display:block;margin-bottom:8px}
+.btn{padding:16px 36px;background:#c0392b;border:none;color:#f0ebe0;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit;font-weight:bold}
+.btn:hover{background:#a93226}
+.btn-ghost{padding:16px 36px;background:transparent;border:1px solid rgba(240,235,224,0.25);color:rgba(240,235,224,0.6);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.btn-sm{padding:10px 20px;font-size:11px;letter-spacing:0.15em}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:1px solid rgba(240,235,224,0.1);flex-wrap:wrap;gap:16px;position:sticky;top:0;background:#0a0a0a;z-index:100}
+.nav-links{display:flex;gap:20px;font-size:11px;letter-spacing:0.12em;flex-wrap:wrap}
+.nav-links span{color:rgba(240,235,224,0.5);cursor:pointer;transition:color 0.2s}
+.nav-links span:hover{color:#f0ebe0}
+.page{max-width:900px;margin:0 auto;padding:80px 48px}
+.page-wide{max-width:1100px;margin:0 auto;padding:80px 48px}
+.page-narrow{max-width:620px;margin:0 auto;padding:80px 48px}
+.red{color:#c0392b}
+.muted{color:rgba(240,235,224,0.5)}
+h1{font-size:clamp(48px,8vw,96px);line-height:1.0;font-weight:normal;letter-spacing:-0.02em}
+h2{font-size:clamp(32px,5vw,64px);font-weight:normal;line-height:1.1}
+h3{font-size:22px;font-weight:normal}
+.tag{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:#c0392b;margin-bottom:24px;display:block}
+.field{margin-bottom:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.card{padding:32px;border-left:3px solid rgba(192,57,43,0.2);transition:border-color 0.2s;margin-bottom:2px}
+.card:hover{border-left-color:#c0392b}
+.divider{width:48px;height:2px;background:#c0392b;margin:48px 0}
+.hidden{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.badge{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#c0392b;border:1px solid rgba(192,57,43,0.3);padding:4px 10px;display:inline-block}
+.stats-bar{border-top:1px solid rgba(240,235,224,0.1);border-bottom:1px solid rgba(240,235,224,0.1);display:flex;justify-content:center;gap:80px;padding:32px 48px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-n{font-size:32px;color:#c0392b;font-style:italic}
+.stat-l{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.4);margin-top:4px}
+.oath-box{border:2px solid rgba(240,235,224,0.1);padding:28px;margin-bottom:20px;transition:all 0.3s}
+.oath-box.taken{border-color:#c0392b;background:rgba(192,57,43,0.06)}
+.founding{border:2px solid #c0392b;padding:40px;background:rgba(192,57,43,0.05);margin:60px 0}
+.how-step{border-top:1px solid rgba(192,57,43,0.3);padding-top:24px}
+.how-n{font-size:48px;color:rgba(192,57,43,0.2);font-style:italic;margin-bottom:16px}
+.film-card{border:1px solid rgba(240,235,224,0.08);padding:28px;background:rgba(255,255,255,0.02);transition:all 0.2s;margin-bottom:16px}
+.film-card:hover{border-color:rgba(192,57,43,0.4);background:rgba(192,57,43,0.04)}
+.town-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0392b;margin-right:8px}
+.map-town{padding:16px 20px;border-left:3px solid rgba(192,57,43,0.15);display:flex;justify-content:space-between;align-items:center;transition:all 0.2s;cursor:pointer}
+.map-town:hover{border-left-color:#c0392b;background:rgba(192,57,43,0.04)}
+.faq-item{border-bottom:1px solid rgba(240,235,224,0.08);padding:24px 0;cursor:pointer}
+.faq-q{font-size:17px;display:flex;justify-content:space-between;align-items:center}
+.faq-a{font-size:15px;line-height:1.8;color:rgba(240,235,224,0.6);margin-top:16px;display:none}
+.press-card{border:1px solid rgba(240,235,224,0.08);padding:28px;background:rgba(255,255,255,0.02)}
+.genre-btn{padding:8px 14px;font-size:11px;letter-spacing:0.1em;border:1px solid rgba(240,235,224,0.18);background:transparent;color:rgba(240,235,224,0.6);cursor:pointer;font-family:inherit;transition:all 0.15s}
+.genre-btn.selected{border-color:#c0392b;background:rgba(192,57,43,0.15);color:#c0392b}
+.roadmap-item{padding:32px 24px;border-top:3px solid rgba(240,235,224,0.1)}
+.roadmap-item.active{border-top-color:#c0392b;background:rgba(192,57,43,0.04)}
+@media(max-width:700px){
+nav{padding:16px 24px}
+.page,.page-wide,.page-narrow{padding:48px 24px}
+.grid2,.grid3,.grid4{grid-template-columns:1fr}
+.stats-bar{gap:32px}
+h1{font-size:clamp(36px,10vw,72px)}
+}
 </style>
 
 </head>
@@ -165,7 +217,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
     <span class="nav-link" onclick="show('heatmap')"><span>Heat Map</span><span class="clap">&#x1F4CD;</span></span>
     <span class="nav-link" onclick="show('faq')"><span>FAQ</span><span class="clap">&#x1F3AC;</span></span>
     <span class="nav-link" onclick="show('press')"><span>Press</span><span class="clap">&#x1F4F0;</span></span>
-    <span class="nav-link" onclick="show('code')"><span>The Code</span><span class="clap">&#x270A;</span></span>
+    <span class="nav-link" onclick="show('code')"><span>The Code</span><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:14px;height:14px;object-fit:cover;border-radius:50%;vertical-align:middle;opacity:0"/></span>
     <span class="nav-link" onclick="show('fund')" style="color:#c0392b"><span>The Fund</span><span class="clap">&#x1F3AC;</span></span>
   </div>
 </nav>
@@ -173,16 +225,16 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 <!-- ═══════════════════ HOME ═══════════════════ -->
 
 <div id="home">
-  <div class="page" style="text-align:center">
-    <span class="tag">✊ The Independent Film Movement</span>
+  <div class="page" style="text-align:center;position:relative;overflow:hidden">
+    <span class="tag">&#x1F3AC; The Independent Film Movement</span>
     <img src="data:image/jpeg;base64,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" style="width:120px;height:120px;object-fit:cover;border-radius:8px;margin-bottom:32px;box-shadow:0 0 40px rgba(192,57,43,0.3)"/>
     <h1>Burn down<br><em class="red">the gatekeepers.</em><br>Screen everywhere.</h1>
     <p style="font-size:18px;line-height:1.7;color:rgba(240,235,224,0.6);max-width:580px;margin:32px auto">Indie Revolutions connects Renegades in every American town with independent films on tour. No studios. No gatekeepers. Just great cinema finding its people.</p>
-    <p style="font-size:15px;color:#c0392b;font-style:italic;margin-bottom:48px">No more being told what's cool. We are our own culture. ✊</p>
+    <p style="font-size:15px;color:#c0392b;font-style:italic;margin-bottom:48px">No more being told what's cool. We are our own culture. <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:22px;height:22px;object-fit:cover;border-radius:50%;vertical-align:middle"/></p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">
       <button class="btn" onclick="show('renegade')">Become a Renegade →</button>
       <button class="btn-ghost" onclick="show('filmmaker')">I Have a Film</button>
-      <button class="btn-ghost" onclick="show('code')" style="border-color:rgba(192,57,43,0.4);color:#c0392b">The Code ✊</button>
+      <button class="btn-ghost" onclick="show('code')" style="border-color:rgba(192,57,43,0.4);color:#c0392b">The Code <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/></button>
     </div>
     <div style="margin-top:16px">
       <span onclick="show('films')" style="font-size:13px;color:rgba(240,235,224,0.4);cursor:pointer;text-decoration:underline">See films currently on tour →</span>
@@ -190,26 +242,10 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
   </div>
   <div style="margin-top:64px">
     <div class="poster-strip">
-      <div class="poster-card" style="background:linear-gradient(160deg,#1a0a0a 0%,#2d1215 40%,#0d0d0d 100%)">
-        <span class="poster-year">1922</span>
-        <span class="poster-title">Nosferatu</span>
-        <span class="poster-dir">F.W. Murnau</span>
-      </div>
-      <div class="poster-card" style="background:linear-gradient(160deg,#0d0d1a 0%,#1a1a2e 40%,#0d0d0d 100%)">
-        <span class="poster-year">1920</span>
-        <span class="poster-title">Cabinet of<br>Dr. Caligari</span>
-        <span class="poster-dir">Robert Wiene</span>
-      </div>
-      <div class="poster-card" style="background:linear-gradient(160deg,#0d1a0d 0%,#1a2e1a 40%,#0d0d0d 100%)">
-        <span class="poster-year">1927</span>
-        <span class="poster-title">Metropolis</span>
-        <span class="poster-dir">Fritz Lang</span>
-      </div>
-      <div class="poster-card" style="background:linear-gradient(160deg,#1a1a0d 0%,#2e2e1a 40%,#0d0d0d 100%)">
-        <span class="poster-year">1925</span>
-        <span class="poster-title">Phantom of<br>the Opera</span>
-        <span class="poster-dir">Rupert Julian</span>
-      </div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Nosferatu_poster.jpg/687px-Nosferatu_poster.jpg" alt="Nosferatu 1922"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Das_Cabinet_des_Dr._Caligari.jpg/543px-Das_Cabinet_des_Dr._Caligari.jpg" alt="Cabinet of Dr Caligari 1920"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Metropolis_%281927_film%29.jpg/550px-Metropolis_%281927_film%29.jpg" alt="Metropolis 1927"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Phantom_of_the_opera_1925_poster.jpg/500px-Phantom_of_the_opera_1925_poster.jpg" alt="Phantom of the Opera 1925"/>
     </div>
     <div style="background:#c0392b;padding:8px 48px;display:flex;justify-content:space-between;align-items:center">
       <span style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(240,235,224,0.7)">Public domain classics — cinema before the gatekeepers</span>
@@ -265,10 +301,10 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
   <div style="border-top:1px solid rgba(192,57,43,0.2);padding:64px 48px;text-align:center;background:rgba(192,57,43,0.04)">
     <span class="tag">Want to help build the revolution?</span>
     <p style="font-size:20px;font-style:italic;color:rgba(240,235,224,0.7);max-width:600px;margin:0 auto 32px;line-height:1.7">If you have a skill, an idea, and a belief that indie film matters — we want to hear from you.</p>
-    <button class="btn" onclick="show('involved')">Get Involved ✊</button>
+    <button class="btn" onclick="show('involved')">Get Involved <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:20px;height:20px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-left:4px"/></button>
   </div>
   <div style="padding:32px 48px;text-align:center;border-top:1px solid rgba(240,235,224,0.06)">
-    <p style="font-size:11px;color:rgba(240,235,224,0.2);letter-spacing:0.15em">✊ INDIE REVOLUTIONS — SELF-DISTRIBUTION FOR THE PEOPLE — hello@indierevolutions.com</p>
+    <p style="font-size:11px;color:rgba(240,235,224,0.2);letter-spacing:0.15em"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/> INDIE REVOLUTIONS — SELF-DISTRIBUTION FOR THE PEOPLE — hello@indierevolutions.com</p>
   </div>
 </div>
 
@@ -276,7 +312,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 
 <div id="films" style="display:none">
   <div class="page">
-    <span class="tag">✊ Currently Touring</span>
+    <span class="tag">&#x1F3AC; Currently Touring</span>
     <h2 style="margin-bottom:16px">Films on Tour</h2>
     <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">These filmmakers bet everything on their vision. Show up for them.</p>
     <div id="films-list"></div>
@@ -293,7 +329,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 
 <div id="heatmap" style="display:none">
   <div class="page-wide">
-    <span class="tag">✊ Renegade Density</span>
+    <span class="tag">&#x1F3AC; Renegade Density</span>
     <h2 style="margin-bottom:16px">The Heat Map</h2>
     <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">Filmmakers — this shows you exactly where your audience is waiting. Every dot is a Renegade ready to show up.</p>
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:start">
@@ -331,13 +367,13 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
       <div><label>City / Town</label><input id="r-city" type="text"/></div>
       <div><label>State</label><select id="r-state"><option value="">—</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></div>
     </div>
-    <div class="field"><label>Name a film you love ✊</label><input id="r-film" type="text" placeholder="This is how we know you're human"/></div>
+    <div class="field"><label>Name a film you love <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/></label><input id="r-film" type="text" placeholder="This is how we know you're human"/></div>
     <div class="field">
       <label>Your Top 3 Genres</label>
       <div id="genre-pills" style="display:flex;flex-wrap:wrap;gap:8px"></div>
     </div>
     <div class="oath-box" id="oath">
-      <span class="tag">✊ The Renegade Oath</span>
+      <span class="tag">&#x1F3AC; The Renegade Oath</span>
       <p style="font-size:15px;line-height:1.8;color:rgba(240,235,224,0.75);font-style:italic;margin-bottom:16px">"I am here for movies and the positive things they bring. I will lift others up, judge no one, and welcome every creed into the dark beside me. The world is hard enough. In here, we are Renegades — all of us, together."</p>
       <p style="font-size:16px;color:#c0392b;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:20px">Lights. Camera. Action.</p>
       <button onclick="takeOath()" id="oath-btn" style="padding:12px 24px;background:transparent;border:1px solid rgba(192,57,43,0.5);color:#c0392b;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit">I Take This Oath</button>
@@ -366,7 +402,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
     </div>
     <div class="field"><label>One-Line Synopsis</label><textarea id="f-synopsis" rows="3"></textarea></div>
     <div style="border:1px solid rgba(192,57,43,0.25);padding:24px;background:rgba(192,57,43,0.03);margin-bottom:20px">
-      <span class="tag">✊ Towns I Can Reach</span>
+      <span class="tag">&#x1F3AC; Towns I Can Reach</span>
       <p style="font-size:13px;color:rgba(240,235,224,0.45);line-height:1.7;margin-bottom:16px">List every city and town you can physically get to. We'll show you a heat map of Renegade interest in each one.</p>
       <div class="field"><label>Towns / Cities (comma separated)</label><textarea id="f-towns" rows="2" placeholder="e.g. Austin TX, New Orleans LA, Nashville TN"></textarea></div>
       <div class="field"><label>Travel Budget</label><select id="f-budget"><option value="">— Select your situation</option><option>I can self-fund travel</option><option>I need ticket sales to cover travel</option><option>I need venue or sponsor support</option></select></div>
@@ -377,10 +413,10 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
     </div>
     <div style="margin-top:40px;padding:24px;border:1px solid rgba(192,57,43,0.2);background:rgba(192,57,43,0.04)">
       <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c0392b;margin-bottom:12px">What you get</p>
-      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Heat map of Renegade interest across every US town</p>
-      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Matched to Renegade-submitted venues in your tour towns</p>
-      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Automated notifications sent to matched Renegades</p>
-      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Direct filmmaker payout — you keep your rights. Always.</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/> Heat map of Renegade interest across every US town</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/> Matched to Renegade-submitted venues in your tour towns</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/> Automated notifications sent to matched Renegades</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/> Direct filmmaker payout — you keep your rights. Always.</p>
     </div>
   </div>
 </div>
@@ -390,7 +426,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 <div id="nights" style="display:none">
   <div class="page">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:16px">
-      <div><span class="tag">✊ Community Memory Wall</span><h2>The Nights</h2></div>
+      <div><span class="tag">&#x1F3AC; Community Memory Wall</span><h2>The Nights</h2></div>
       <button class="btn btn-sm" onclick="toggleForm('night-form')" style="margin-top:8px">+ Were You There?</button>
     </div>
     <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">No Rotten Tomatoes. No thumbs up or down. Here we share memories of the movies that brought friends and Renegades together. It's never wasted time when you're with friends.</p>
@@ -417,7 +453,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 <div id="venues" style="display:none">
   <div class="page">
     <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:16px">
-      <div><span class="tag">✊ Renegade Venues</span><h2>Where We Screen</h2></div>
+      <div><span class="tag">&#x1F3AC; Renegade Venues</span><h2>Where We Screen</h2></div>
       <button class="btn btn-sm" onclick="toggleForm('venue-form')" style="margin-top:8px">+ Add a Venue</button>
     </div>
     <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">Know a spot that could host an indie screening? A bar with a back room, a community hall, a warehouse? Add it here — filmmakers on tour are looking right now.</p>
@@ -443,11 +479,11 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 
 <div id="involved" style="display:none">
   <div class="page-narrow">
-    <span class="tag">✊ Join the Movement</span>
+    <span class="tag">&#x1F3AC; Join the Movement</span>
     <h2 style="margin-bottom:24px">Want to help build<br><em class="red">the revolution?</em></h2>
     <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.55);margin-bottom:48px">If you have a skill, an idea, and a belief that indie film matters — we want to hear from you.</p>
     <div id="involved-success" style="display:none;text-align:center;padding:64px 0">
-      <div style="font-size:48px;margin-bottom:24px">✊</div>
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5lAp4HFKBTsUAMxSgU4LTwKAGBacF5p4WnhKAGhaeq1IqVIqUCI1Tmp0TNPVPapkTmgBqR1OsdORKnRKAGpHU6JT0jzVhI6AI0jqwsdPROgqZEwaAGpHUgSnhaeq0AMCjFPCZqQLT9hXrRcCEJil21LjNIRTAZRTiKbQAUUmcUUxHlwp4FRrUgFQUAFSKtCingUACrUirSAVKqmmA5FzUypSRg1OgoECRmp1jp0Qz2qdEoAYsZqZI6eq1Ko4oARENTIuDSqvFTidra0l8u2S4lYrgFsEAZ6evbIyKTdgGrj2FTqKqap4suYUlt4NNW2LLs82OJHZSw4IOBg+1QafaXlvYQXTXk9xLKN4WWTchHTBH4HkUuYdjXUU4LVWG+hx/pKPat/t/dP49P1q9HiRN0bK6+qnNHMgsAHHFBHrT8CgiqENxTTwafSHigCJqbnFPbniompgIWzRUbHFFAHmqipVWkUetSrUlCheOBT1WhQe1TKCxyTknvQIFWpVTNOjQZqzCqq6ll3KOooAjRcVMic81cb7M/KxlDj86l0zTbnUJzHaJuxyzE4VR7mlzaXZTjrZaldEGKmU44Arq7XwnFGubu5dm7iMbR+vNTt4XtWUGOWdc9MkH+lZfWIGqw82ckqnvUyL7Vt3Ph2SEEwSiXH8LDB/wrOEZRijqVYdQRg1pCpGfwsynTlD4kRquOtTwRNPKkMSl5JGCqoHJNOtraW6uFht0LyN0A/mfb3rTtZo9HvC1tsubjYU8zfwjHqV4544yaJ1Iw+JmlHDVa38OLZow6FbyapbWaqj+T80soHVv4j/QewrM164in1WY26JHADtRQMAAe1dRotjdx6Pc3UlhfmOQHE6x5TkdGZNxA/AVxd26RXHyrAzHIAiAIGcdjzn6881lzKWpE6coO0lYYWXlTgj3rOfRoxN5tiksTt1EOVBP4cVq61MmkMtvuRbsAGaUgMUJH3FB4BHc+vSuXvtQE6ybftEkhHDtIzc/nTRJvWDzJ5qSXP2koQG3KAUz0Ge/Q81oA5UEZGR3rzyyvdQjfc1zPFAr/MMb8N+vGDXX6NqYlhR7hFaEnakqgopbPRh1H1/lVp2B6mmTTGNObOSCMEdqY1aEjWqJqe31qNjQBE1FNc8UUAefLU6xt5e8D5enWo1FSKKkoetTpUSCp4xTAni+lWUX1qKBXkdUjUs7HCqoySfQV2mj+EgVD6pKQx58mMgY+rev0qJ1Iw1ZUKcpu0TlVWuy8JXVvBpUyO6pIJskn0IGP61ot4e0lAF+ztn1Dtn+dQP4ZgMchtZZIwwwVZtwPpXPOvCasdEKE4SuaUl9bgIY5VYYz165qzBdQtMAGBUj8K8y1Kx1fRZGkMUk9uP+WsQ3YHuOtX9J8QR3SjEgz/Wudw6rY6k+jPSpltZIt5KoQMZJxn6AVj3ulxXsTNDh3XIBHUf/AFqm0K7hjnRnKmRwCjNyMdwPcV1RGmTQNJqcsUAHIkbrn2I5z7ChaO6E9VZnm91d/YbZrKxieJ3AE8zfef8A2RjovtW78P8AwoNTvDcXjbbSL5pHYhQB6knoKxtd1Oyi1KNmzInmFFY8OynoT75/+vVnWvFTXGnJpulI0NmuNynhpW9Wx29ql3cuaR7OGrf7Py0Y2ezPTPHut2Ok+GYrfRmjcXC7TMpz8o7A968F1G8lLGTfuZGDKDz0Of6V0viC9jktrW0guRcQ2sQUMO7Hlv8Ax4muesrF9RuZI1YR4X756AkY5Hf8KLvmuVOnCGHfPqUfGTG71m61KGTzILzFyjNypJHI+oOaydN1qADZc2zxOOMqMr9fWu6tvBcq2zW0l6j20hJQNGQAfVWB4PsRzU9z4VkMEcE0EE6KoVWzzwPXqK7Y1IvdnzVWlbSKOQtZ4TqKmJkkiuQEYA9GH3ePzH4it60SIWzxFVK7mBXHBBrL1Hwc6XcTWo8nHPzyYwQeCDiukstJuF3eeyYZgSUO49PSmqkE9zL2U+xG8Lx6dZTOSS4dCT1bYxUH8gPyquTkZ7Vd1FpW8sNEYoY12RrnOF5PJ7nJJPuazycVrF3Whm01oxDUTGnMevNRMaskYx54opkjc+9FAHELUo7VEoqQVJRMlTx4qulTIaANzw1J5eqIygGTY4j/AN4jj+tdta6hsU+djeP4T615xarNJKot0keQHI8sEke/Fbd0uoLD57W06vj51KkHPqK560FJ3OmhNpWO0W6Dd+evJ/z6VppLGwHQk/yrye18RuH2eYhdf4X+VhWvD4jkUDcSOMEf4VzSps6YzR6SRavEQ0m0j05P+A/E/hXKav4e02/keQIsUp58+HCt9fQ1nRav55BLcDoOwq19uO3B3M5OB70lFrYrmT3OfvhrWgxN8i6hYg53oMMnuR1B9xWHceMJ5mON4fpl2yfzPSvWLbRL94UkM0AdhnymzkD39Kw/Fvh+5ntw0kZhlX7uQHjYem7qD9a0Ul9pCSTe557pouNUvlknmRIo/nJdsDj+ZruPCMWlrcNPq12gtkyxhX5pJmxwMf3R7msvSbJBcrF9mEkNuhefaqk88dDweSBT9Q8OIJHVIlWRPvBMggnnGPXg9PQ1nOpFvXQ9OnB0ocsHqF+9sbmQwRPHHuO0K2do7Dn/ABqj/ay6fcIELYfhifWqclpdQjMUrlTyMncCKxtWM88PlyIN+4fMOKcIJy3NcVNui1JPmPRbbxKrw7GmO04yAa0bXX7ggK08Eif9NMqa8ggnkhwsxPHG7rWlbXjA7kZW9yc1q6R4jn3PXZ9SimtCsjIzsR8y9vxqOO+jRR/F2xmvOI9WdSMk/WpG10D72Rj35NQ6TGqiR295qwclFAKtwcjPFZk+0ONuNrDIrn01PcoaQBQeQD1xWtBN5+nLIOGjOCvsa2orkZhWfOhXbFQu1DNUTvk5wB9K6bnINdveionPJOaKYHKgDjGacKUCnqtTcoclaWjWX9oX8cGdqnLOe4Udfxqgimr2nTG2uA4YqCCjEdgaTvbQFa+p6dpKW1nCIbSNY0HcDk/U9z7mtN549oDgGuD+2yWTLtmMisOoPSp4dX3shDcE968+VN31PRjNWsjotQ8P6Praf6TaxlyPvAYYfjXHar8Obq1cyaPePt7RTEkV01hfrsViRwMVr/25GgA/1meMA4Pv+FEZSjomDjGWrPH511XR3I1OykjUf8tYxuT/AOtWtomrQSyo6zgOpypJyM16Bd6hb3KnKKP9noAK5DWvDWl3hMsIFncH/lpEcAn3HQ1pzp/ErE8jWzudVpevqpCTMInHJDHgj1B7iq3iHxxDHayQWsgdiCGkH3VHfB7n+VeZ6pY61psB3Mbi0U/6xPnUfUdRWRbwXGpSjLyFMhRjoSegFWoK129CbyfupHd6DrQuYZI4blITPP5hyQDkcKc9cDk1sywSx70s7kSwuf8AVyKfmDbSSSvcnjHXGfeuIGkwi1jyJFbkKzcZI68iq6/2haKXtLmUIeMEkgiuepQVV3hI7KeKq4ZctWOn9f1udVeagfswnljQO0e1GXBUgZ6D+EZJOPoO1cxpgl1C9ZnBeHG0A9/eql3qdzcMVulxIfl3YxxWvZ3ltYaayRSxNMwwMdRVU6Psl6m6xMK7XJ01s+/Yw9XtYYbp/sTEKD0b+hpuhaVcapqESqECLIN7E9hyeO/FSyoXUtx6f/Xqhbajcaffb7BirsNmMZDD3FdlJ9zz8Yoxb5TQ1a2hs9au7WGUSRo+V56A84PuOlEQC/dAz64rLjjdrhs7mbPJ9T3robHT5nUbmKD/AGiKJ6M5YXaEhiYncwJb3ro/D43FoJR8r8c1BbWUMCjfNvb2FSCZYZAVOMVjzamvLoT3MTW8rRt26H1FVXYDsK0r6dbqyWXjzEIBx3BrJkNdMXdHLKNmRuaKjc4oqyDDA5qVRTQKlFQUOUVMMADiohW3o9nH+7nuF3FvmRfQZ6/jSbsNK5qReH5bvR4BGxSYDJaTpzzgd+OlYd/oGu2mWjKToO3Irqk1oebJExxg4z7dgParn29ZJFG7g45rkdSSZ2qEbHmzarfWTFbu1njPr1FXLXXhP918nuO4r0Zks7mMC5iRjjGD0J/wrJ1bwtoVzFhY/KmH8SHH40+eL3QcklszEt9TDjqSfWt/w5NA7PJcKrydFVx0FcXqOgahphMlpcCeIdn4I/GqsHiSW3Pl3tvICvRk+8v0quS+sSea2kj2NoNOnTmERSf3o/lP6VwviC2srPUmS0uVQ9SQgALY9Omee2KwX8ZXDwGO1kJ7b9mG/wABWNbrd6leAiXYwBI+f/Oal0m07m1Ko1NOKOtjuLuNka4hWYJlG2HDKCMkeg4wPYDFYepXSRKSPlfH3NpUg+x9M8fQU17vU7I7px5qjOGb5sZ6/nVK2uI7i8El6yog6KOR6AY9KwhR5Xzfkd1Wq/hSs38iTS4shp7pvlHJzzVa4W1lkYwhoeeCeQfr6VY1G7WYiOHAQegxmqLFY1Luen611QvuzlxNOlZRj06kVzcvanYy5UjjnOfpTtFspLmTz1X5mOyIep7n6CoIIn1W8CcJEnzO3ZVr1DwxpMUEKPIgViu1FP8AAvp9e5rWUuReZ5yi5vlvoZ+maBGkKrIu7HXI6n1rSTQoYBuSISof4W4I/wAa6MLbAZyufaqV1cxDOJAuOhFczk2dXKkYlxaQBCIY4kI9jn+dYk8JEmAVY+1bl/djZ82yT371RtBH5UlxhwVHRjkfhVQTbIm7IgyyRiMnocn61C7UrNnOTzULGutKyONu7uNduCMCio3NFMRQX1qXNRLTxUlEi810+ntHLpCyhvngXY4HJwO4rl164q3ZzzWjCVQwVxjkEBhUtXHF2H6nqHnSZV1wOMrxn3+tV4NXEONzyHHp81T6ja289obq0AEin97GRyM9CMdqw5GVOGYA+gHNRbuap9jfTxCAwAfB7buP51fg1neAHcc+tcO37x8ENGn94rn9KRd8R/czD6A4/Q0nSRpGbe7PSbS6Mk8RkUvEh3EDnP4d617i10jVo8y28Lk91GCK8ohv76LBR+R0/wAipptbv3PzYVsYLgEMfqan2bWxTLvivTLDTr1V06Rix++pOQKyo5PKG4nFRoXmcs5Yn1pHXcwDkgegqvJmtNOC5kiVJZbqUK7t5S8kFuAKmupoJUEaxZVRgOODVYsiDaBx6VC0/OFwfpQldjdVRi0+oTloVyp3foarTNJMQG4J4GTU6hpT835Vs6TYrK4aRAy+hFXflOOTctFsaXhLSlndEhUvbxEPK4H+tfsPoK9BwETAXaR6msPS2W1tkSNfLX0Bq012jA7mB/3jiuacnJ3NoR5EWJ5QSc7foTisu4k68Jx1O6o7q7VQcGD8fmP6ViXd2TnLLj/rn/iaErhKRJdyKX/1kYP+yc1PLKUso4hzk7mOMVm2CLNcjcxA6ngDFWLmXzZWYcL0A9B2rohEwqS0Gs3BHrULtSg85IBA7GmSsGYlVCg9hWpiMZqKjfgkHg0UxFbkU4ZoU0o65BqLl2HCptzOqqzMVXgAnpUa471Io9OaYiRCR0PtTPsaSHEfyyHsehP17VIoqRcd6TVxptGbcWkkJC3EZQnsapTWqt2xXVylNQgEMzBZ1+5If4vY+/vWDNC8UjJICrDqDU7GmjMcwSIcxuwx705b28i+U4df9oZrRKKFOKQwhh0ouuo02tmVotSTGJotvutOeSOXmMg9xSvag9qRbYDjGaXLHc2WJq25W7opiJpGJI47CpFhxyBXSafo/mIrSDCnnFaqaJb4BCgH3pOokZcjepytlamaRcce9dPZ2z26ZKEj+8oq0NNjhDGMBT2xTTdeRw+eP7tZSlfY0jGwpuwFIDc+hqnc38Z4mtkf3V8Gi51KB1w8Yk+q9KzpDBLysSj8aEhtiyXVqD+7tpoz6h81Xe5eQhVb5fdQDTJYAM44HsaRFKcqCfrVpIzbNi1YRQBHGWkBHX1qpuJGGGCODVVHkeVWOeCMelX9QjIkEyj5H6+zd61i+hlNX1K7NUZPpQzAE4qJmqzIVmoqItjrzRTAOlKO1K+zA2bs980gYgEdj1rK5s0OUc1OhxxUKNtPIyKfnnjgU7isTg8VYto2nlWOPbuPTccD86pg9KerY9qb8hJK+pamRopXikXDqcMOuKSXbcIFn+YjgP8AxD/GoVPOc0/OTRa61Fez0KFxbvEc/eQ9CP60yN/m56CtPtjqKhlhV1CgBMelS4lqXcITEx5xWra2VvvVyAawmtXBLZ3Kvf1p8V7NCMZyPSs2n0NYtHbW0UaRhQenFNlRfl2n8jXKLrEo4NNl1mY5xWfIzTnR0E3mEcOqr3JqoWSNCZHU49a52XUZ5QV3k5POKsWkiIQ85Lv2HYU+SxPOaoWSVdyRgIejPwKa9s4XLSFvZAAKkt9QEuFYEj+VacXkunBAbtnr+FJtoaSZjJA5HCBR6tkmlktcDkceprUdGRyOg6/NyanhRZeCpz6mlzBynPeTjoCD/OrEZDZR+VYYI7VpXFlh92OlVWhIII6+tUpi5DJ1Cxa2XzYyXgPfuv1/xrNZq7CIDbsYDbjDA+9YGsaabYmWAHyD1H9w/wCFb06l9GYVKdtUZbGio3OKK2MS5CyxyKzRrIB/C3Q0w8sTgc0tL1Fc50vsJTgeDkUEDJ2kkds8GjFO4rDlqRTxUI60+qTJaJQcU8NxUGTjPalBpk2J93PNOkkDkYRVwO3eodwx70DJOFBPegLEhck5HH0qGWJZBx8rfoaM+lJmhq4XaKcyPE20rg+tMETSHBJPsK04isx8mUDJ+6f6UyKMQS7WPy9qzehonchgtjxkYrUtrDeMqv4ngVctYonUFUGfU1O0TxnLHg1m5GqiU/sW3gsTj0FLHcPbthlP1A/rWrDsK47eppktsknXJBqObuO3Yt20iXEXyjLkdhTSssbA9CKy4hJp84ZMmMnnPat3etzCrKeepqXoWtRQySR8EbiMEVUmRlBxjPv0qUZifco496t4WaMlanYe5mlB+7Kjg53UyRQOOCDwQemDVp0ZFAXkd/aopAGxuHI/nVJktHL61pBgDT2oLQ9SvdP/AK1FdKSUTjkDof8AP40V0RraamEqN3ocXig9c4xStSHikW0PRGc4RWY+ijNOkjeMgSKVPoajileJ98TsreqnBoaRnYs5LE9STmjW4aW8x3FAIAPGfxpm6kLccVSIaJc4OD+VSSyxFIhFFsZVw7bs7znr7VWJxTd3NPcnYm3Uu6oCxpA/NNCLGaTdUQejdVCJGwwPapY5PPQqx/egZ+vv9arBqaxwQykqw5BoauJOzNjTrsI22RiCK3EcOoIPB71yZZZoxMnysD8wHY1oaffkELnOOoxXPOJ0Ql3NgqTJwcH1FW4ZNvDkfjVLf5g3FtvtmgSBTggmsyy/LEsqkAbs1Rtmezn2HOwnjNXredGXBBU+9F1CsiZXk0hll0V4w6nnHSooy0L5A4qGykP+qf8ACrhT3PNLyK8yVlEi71IyO1VZcEnjI4yKkhJib5W49KdPFkb0OT396QblZlCuVXpyTRSzHb65z1opiOFY8U0854oordEMb0pOcUUUyGJmkJooqkJiE0maKKogCwz0pGYE8DAoooELupN1FFUIXNNZuaKKYmLFKYZNw+70Yeoq0W2MHiYbTyDiiipkhwZoWlwW6tWgkin0/OiisGjdMngchxtytX0uAwAfP40UVmyxHj3HcuM9amtpG5B+nNFFIaJnAOSKZHKVcr60UUhj/L5yDxRRRSGf/9k=" style="width:64px;height:64px;object-fit:cover;border-radius:50%;margin-bottom:24px;box-shadow:0 0 20px rgba(192,57,43,0.4)"/>
       <h3 style="font-size:32px;margin-bottom:16px">Message received.</h3>
       <p style="font-size:16px;color:rgba(240,235,224,0.5);line-height:1.7">We'll be in touch. The revolution is built by people like you.</p>
     </div>
@@ -457,10 +493,10 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
       <div class="field"><label>Your Email</label><input id="inv-email" type="email"/></div>
       <div class="field"><label>Your Skill</label><select id="inv-skill"><option value="">— What do you bring?</option><option>Filmmaker</option><option>Venue Owner</option><option>Designer</option><option>Developer</option><option>Marketer</option><option>Photographer</option><option>Writer</option><option>Musician</option><option>Event Organiser</option><option>PR &amp; Media</option><option>Distributor</option><option>Other</option></select></div>
       <div class="field"><label>Your Idea</label><textarea id="inv-idea" rows="5" placeholder="Tell us what you want to bring. Be specific. Be bold. We're listening."></textarea></div>
-      <div class="field"><label>Name a film that changed you ✊</label><input id="inv-film" type="text" placeholder="This is how we know you're human"/></div>
+      <div class="field"><label>Name a film that changed you <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:16px;height:16px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:4px"/></label><input id="inv-film" type="text" placeholder="This is how we know you're human"/></div>
       <div style="display:flex;gap:12px">
         <button class="btn-ghost" onclick="show('home')">← Back</button>
-        <button class="btn" onclick="involvedSubmit()" style="flex:1">Send It ✊</button>
+        <button class="btn" onclick="involvedSubmit()" style="flex:1">Send It <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:20px;height:20px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-left:4px"/></button>
       </div>
     </div>
   </div>
@@ -470,7 +506,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 
 <div id="faq" style="display:none">
   <div class="page-narrow">
-    <span class="tag">✊ Questions</span>
+    <span class="tag">&#x1F3AC; Questions</span>
     <h2 style="margin-bottom:16px">Frequently Asked</h2>
     <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px">Everything you need to know about the revolution.</p>
     <div id="faq-list"></div>
@@ -485,7 +521,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 
 <div id="press" style="display:none">
   <div class="page-narrow">
-    <span class="tag">✊ Media & Press</span>
+    <span class="tag">&#x1F3AC; Media & Press</span>
     <h2 style="margin-bottom:16px">Press Room</h2>
     <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px">Covering the independent film revolution? We'd love to talk.</p>
     <div style="padding:40px;border:1px solid rgba(192,57,43,0.3);background:rgba(192,57,43,0.04);margin-bottom:48px">
@@ -519,7 +555,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 
 <div id="code" style="display:none">
   <div class="page-narrow">
-    <span class="tag">✊ The Renegade Code</span>
+    <span class="tag">&#x1F3AC; The Renegade Code</span>
     <h2 style="margin-bottom:48px">There is<br><em class="red">one rule.</em></h2>
     <div class="divider"></div>
     <p style="font-size:22px;line-height:1.8;font-style:italic;margin-bottom:32px">We talk about movies and the positive things they bring into our lives. Nothing more. Nothing less.</p>
@@ -540,7 +576,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 
 <div id="manifesto" style="display:none">
   <div class="page-narrow">
-    <span class="tag">✊ Our Mission</span>
+    <span class="tag">&#x1F3AC; Our Mission</span>
     <h2 style="margin-bottom:48px">Indie Revolutions<br><em class="red">exists for the little guy.</em></h2>
     <div class="divider"></div>
     <p style="font-size:20px;line-height:1.8;font-style:italic;margin-bottom:32px">For the filmmaker who maxed out their credit card, shot on weekends, and poured every piece of themselves into a story the world needs to hear — but can't get a meeting in Hollywood.</p>
@@ -554,7 +590,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
       <div style="border-top:1px solid rgba(192,57,43,0.4);padding-top:24px"><p style="font-size:14px;color:#c0392b;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px">Influence</p><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Because a single film can shift how a generation thinks.</p></div>
       <div style="border-top:1px solid rgba(192,57,43,0.4);padding-top:24px"><p style="font-size:14px;color:#c0392b;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px">Change the World</p><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Because the little guys who bust their ass deserve to be heard.</p></div>
     </div>
-    <p style="font-size:28px;color:#c0392b;margin-bottom:48px">That's the revolution.<br>Join it. ✊</p>
+    <p style="font-size:28px;color:#c0392b;margin-bottom:48px">That's the revolution.<br>Join it. <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:22px;height:22px;object-fit:cover;border-radius:50%;vertical-align:middle"/></p>
     <div style="display:flex;gap:16px;flex-wrap:wrap">
       <button class="btn" onclick="show('renegade')">Become a Renegade →</button>
       <button class="btn-ghost" onclick="show('filmmaker')">I Have a Film</button>
@@ -616,7 +652,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
       <div id="fund-error" style="display:none;color:#c0392b;font-size:13px;margin-bottom:16px"></div>
       <div style="display:flex;gap:12px">
         <button class="btn-ghost" onclick="show('home')">Back</button>
-        <button class="btn" onclick="submitFund()" style="flex:1">Back the Revolution &#x270A;</button>
+        <button class="btn" onclick="submitFund()" style="flex:1">Back the Revolution <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAwADADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5QihDYxWjZ2YY9KbZxAkDFd14a8M3VxHBdT2M7WbHcWjI8xlx/CCefyqJTUVdlRg5uyMXT9OAxwK3bSCCIqrMu4jO0ckD1PoK6az0fQL+zml0+5a0ltwWljun2kAdQQxBBp13NYR+HbG102Rr69uZ2d4osbEQL8o3dXbJySMAYwOlYPFwOyGXVpqTjbTzM6GFCmRtYeoOaSXCVW0bT9ei1CT7fazwK8e8r5SmPPcgrzmn3cnyntXRCalscUoOO557psQaeNXYohYAtjOB3Nel2RthEsei+KXtZoE2lLtVZCfT5eV/WuA0l4I7qJ5l3RqcsK0NQ8UJJIyatotpdkcecEw4HqGGDXJXi5WSOvDNRvc6DxBdifTJI/EGg3GpXbtst7u3cNED7vjj6Guc8Q3tvNthtpr2zMS52uxxHjkBfq3ocdapaprzNaRQaXfambJfnlgnkAQN2wV5I+v61l2y3WsXi20T4V2zJIwx9T78dPSsPZO6b2R6dOu6VN+fTubOia3r9yiW0F3PIgB8wlSFU5IIyevAHNbt5cFrdHMquxXD47MODV24v7DSNKi0zS40G1Qg2ryx9TXOX9wCSBjjjjv710UXeTaVkeZX+FJvUy4TtbmrpMU1v5TjjOfofUVRyozuz7YoEwXp/Omp3FKnYkisbKKcSXkJdAclosAn8K2ItR01pPK02zkhUj5nWMdP61h/ac/WtPQ9RhikMciqATwwH3T/AIVNSGlyqc9bM0E0Nbk+dFNuZvusOOe4+tUdb0y5hgNxGpKj/WKOq+49v5V09lJE2ZIsAn/WIP4x6j3FX5UWSMHgt6j+L/69YRrSgzeVKM0f/9k=" style="width:20px;height:20px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-left:4px"/></button>
       </div>
       <p style="font-size:11px;color:rgba(240,235,224,0.18);margin-top:24px;line-height:1.7">Voluntary contribution. No goods or services provided in exchange.</p>
     </div>
@@ -626,7 +662,7 @@ h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;lett
 <!-- ═══════════════════ SUCCESS ═══════════════════ -->
 
 <div id="success" style="display:none;max-width:560px;margin:0 auto;padding:120px 48px;text-align:center">
-  <div style="font-size:56px;margin-bottom:32px">✊</div>
+  <img src="data:image/jpeg;base64,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" style="width:80px;height:80px;object-fit:cover;border-radius:50%;margin-bottom:32px;box-shadow:0 0 30px rgba(192,57,43,0.4)"/>
   <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.3);padding:20px;margin-bottom:32px">
     <p style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#c0392b;margin-bottom:8px">🏆 You're a Founding Renegade</p>
     <p style="font-size:14px;color:rgba(240,235,224,0.6)">Your Founding Trophy is reserved. It will never be made again.</p>
@@ -668,14 +704,6 @@ function getCount(table, callback) {
     var count = r.headers.get('content-range');
     if(count) { var n = parseInt(count.split('/')[1]); if(!isNaN(n)) callback(n); }
   }).catch(function(e) { console.log('Count error:', e); });
-}
-
-// ── UTILS ──
-function esc(s) {
-  if(!s) return '';
-  var d = document.createElement('div');
-  d.appendChild(document.createTextNode(s));
-  return d.innerHTML;
 }
 
 // ── DATA ──
@@ -753,7 +781,7 @@ function takeOath() {
   oathTaken = true;
   var ob = document.getElementById('oath');
   ob.classList.add('taken');
-  document.getElementById('oath-btn').textContent = '✊ I Am a Renegade';
+  document.getElementById('oath-btn').textContent = '&#x1F3AC; I Am a Renegade';
   document.getElementById('oath-btn').style.background = '#c0392b';
   document.getElementById('oath-btn').style.color = '#f0ebe0';
   var jb = document.getElementById('join-btn');
@@ -848,13 +876,13 @@ function renderNights() {
   var html = '';
   nightsData.forEach(function(n){
     html += '<div class="card">';
-    html += '<h3 style="margin-bottom:4px">'+esc(n.film)+'</h3>';
+    html += '<h3 style="margin-bottom:4px">'+n.film+'</h3>';
     var meta = [];
-    if(n.director) meta.push('dir. '+esc(n.director));
-    if(n.year) meta.push(esc(n.year));
-    if(meta.length) html += '<p style="font-size:12px;color:rgba(240,235,224,0.35);margin-bottom:16px">'+meta.join(' &middot; ')+'</p>';
-    html += '<p style="font-size:17px;line-height:1.8;font-style:italic;margin-bottom:16px">&ldquo;'+esc(n.moment)+'&rdquo;</p>';
-    html += '<p style="font-size:11px;color:rgba(240,235,224,0.3)">'+esc(n.name)+' &middot; '+esc(n.town)+'</p>';
+    if(n.director) meta.push('dir. '+n.director);
+    if(n.year) meta.push(n.year);
+    if(meta.length) html += '<p style="font-size:12px;color:rgba(240,235,224,0.35);margin-bottom:16px">'+meta.join(' · ')+'</p>';
+    html += '<p style="font-size:17px;line-height:1.8;font-style:italic;margin-bottom:16px">"'+n.moment+'"</p>';
+    html += '<p style="font-size:11px;color:rgba(240,235,224,0.3)">'+n.name+' · '+n.town+'</p>';
     html += '</div>';
   });
   document.getElementById('nights-list').innerHTML = html;
@@ -881,13 +909,13 @@ function renderVenues() {
   venuesData.forEach(function(v){
     html += '<div class="card">';
     html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px">';
-    html += '<div><h3 style="margin-bottom:4px">'+esc(v.name)+'</h3>';
-    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">\uD83D\uDCCD '+esc(v.town)+(v.address?' &middot; '+esc(v.address):'')+'</p></div>';
+    html += '<div><h3 style="margin-bottom:4px">'+v.name+'</h3>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">📍 '+v.town+(v.address?' · '+v.address:'')+'</p></div>';
     html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
-    if(v.type) html += '<span class="badge">'+esc(v.type)+'</span>';
-    if(v.capacity) html += '<span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.35);border:1px solid rgba(240,235,224,0.1);padding:4px 10px">~'+esc(v.capacity)+' seats</span>';
+    if(v.type) html += '<span class="badge">'+v.type+'</span>';
+    if(v.capacity) html += '<span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.35);border:1px solid rgba(240,235,224,0.1);padding:4px 10px">~'+v.capacity+' seats</span>';
     html += '</div></div>';
-    if(v.note) html += '<p style="font-size:14px;line-height:1.7;font-style:italic;color:rgba(240,235,224,0.55)">&ldquo;'+esc(v.note)+'&rdquo;</p>';
+    if(v.note) html += '<p style="font-size:14px;line-height:1.7;font-style:italic;color:rgba(240,235,224,0.55)">"'+v.note+'"</p>';
     html += '</div>';
   });
   document.getElementById('venues-list').innerHTML = html;
@@ -899,12 +927,12 @@ function renderFilms() {
   filmsData.forEach(function(f){
     html += '<div class="film-card">';
     html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:12px">';
-    html += '<div><h3 style="margin-bottom:4px">'+esc(f.title)+'</h3>';
-    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">dir. '+esc(f.director)+' &middot; '+esc(f.year)+' &middot; '+esc(f.genre)+'</p></div>';
+    html += '<div><h3 style="margin-bottom:4px">'+f.title+'</h3>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">dir. '+f.director+' · '+f.year+' · '+f.genre+'</p></div>';
     html += '<span class="badge" style="background:rgba(192,57,43,0.1)">On Tour</span>';
     html += '</div>';
-    html += '<p style="font-size:15px;line-height:1.7;color:rgba(240,235,224,0.6);margin-bottom:16px">'+esc(f.synopsis)+'</p>';
-    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">\uD83D\uDCCD Touring: '+esc(f.towns)+'</p>';
+    html += '<p style="font-size:15px;line-height:1.7;color:rgba(240,235,224,0.6);margin-bottom:16px">'+f.synopsis+'</p>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">📍 Touring: '+f.towns+'</p>';
     html += '</div>';
   });
   document.getElementById('films-list').innerHTML = html;
@@ -915,8 +943,8 @@ function renderHeatmap() {
   var html = '';
   townsData.forEach(function(t,i){
     html += '<div class="map-town">';
-    html += '<div><span class="town-dot"></span><span style="font-size:14px">'+esc(t.city)+'</span>';
-    if(t.trending) html += '<span style="margin-left:8px;font-size:10px;letter-spacing:0.15em;color:#c0392b;text-transform:uppercase">&uarr; rising</span>';
+    html += '<div><span class="town-dot"></span><span style="font-size:14px">'+t.city+'</span>';
+    if(t.trending) html += '<span style="margin-left:8px;font-size:10px;letter-spacing:0.15em;color:#c0392b;text-transform:uppercase">↑ rising</span>';
     html += '</div>';
     html += '<span style="font-size:13px;color:rgba(240,235,224,0.4)">'+t.count.toLocaleString()+'</span>';
     html += '</div>';
@@ -929,8 +957,8 @@ function renderFaq() {
   var html = '';
   faqData.forEach(function(f,i){
     html += '<div class="faq-item" onclick="toggleFaq('+i+')">';
-    html += '<div class="faq-q"><span>'+esc(f.q)+'</span><span id="faq-arrow-'+i+'" style="color:#c0392b;font-size:20px">+</span></div>';
-    html += '<div class="faq-a" id="faq-a-'+i+'">'+esc(f.a)+'</div>';
+    html += '<div class="faq-q"><span>'+f.q+'</span><span id="faq-arrow-'+i+'" style="color:#c0392b;font-size:20px">+</span></div>';
+    html += '<div class="faq-a" id="faq-a-'+i+'">'+f.a+'</div>';
     html += '</div>';
   });
   document.getElementById('faq-list').innerHTML = html;
