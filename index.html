@@ -1,24 +1,1084 @@
-Let me get those poster images first.​​​​​​​​​​​​​​​​
+<!DOCTYPE html>
 
-I can use direct Wikimedia Commons image URLs. Let me grab the actual image URLs and build the redesign now.​​​​​​​​​​​​​​​​
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Indie Revolutions — Self-distribution for the people. Connecting indie films with Renegades in every American town."/>
+<title>Indie Revolutions</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080808;color:#f0ebe0;font-family:'Special Elite',Georgia,serif}
+input,textarea,select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(240,235,224,0.15);color:#f0ebe0;padding:14px 16px;font-size:15px;font-family:inherit;outline:none;box-sizing:border-box}
+select{background:#111}
+label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,235,224,0.4);display:block;margin-bottom:8px}
+.btn{padding:16px 36px;background:#c0392b;border:none;color:#f0ebe0;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:'Bebas Neue',inherit;font-weight:normal;letter-spacing:0.15em}
+.btn:hover{background:#a93226}
+.btn-ghost{padding:16px 36px;background:transparent;border:1px solid rgba(240,235,224,0.25);color:rgba(240,235,224,0.6);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.btn-sm{padding:10px 20px;font-size:11px;letter-spacing:0.15em}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:1px solid rgba(240,235,224,0.08);flex-wrap:wrap;gap:16px;position:sticky;top:0;background:rgba(8,8,8,0.97);z-index:100;backdrop-filter:blur(10px)}
+.nav-links{display:flex;gap:24px;font-size:11px;letter-spacing:0.15em;flex-wrap:wrap;align-items:center}
+.nav-link{color:rgba(240,235,224,0.45);cursor:pointer;transition:all 0.2s;display:flex;flex-direction:column;align-items:center;gap:4px}
+.nav-link:hover{color:#f0ebe0}
+.nav-link .clap{font-size:14px;opacity:0;transition:opacity 0.2s}
+.nav-link:hover .clap{opacity:1}
+.page{max-width:900px;margin:0 auto;padding:80px 48px}
+.page-wide{max-width:1100px;margin:0 auto;padding:80px 48px}
+.page-narrow{max-width:620px;margin:0 auto;padding:80px 48px}
+.red{color:#c0392b}
+h1{font-size:clamp(56px,9vw,110px);line-height:0.95;font-weight:normal;letter-spacing:-0.02em;font-family:'Bebas Neue',Georgia,serif}
+h2{font-size:clamp(36px,6vw,72px);font-weight:normal;line-height:1.05;font-family:'Bebas Neue',Georgia,serif}
+h3{font-size:24px;font-weight:normal;font-family:'Bebas Neue',Georgia,serif;letter-spacing:0.05em}
+.tag{font-size:10px;letter-spacing:0.5em;text-transform:uppercase;color:#c0392b;margin-bottom:24px;display:block}
+.scene-tag{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(240,235,224,0.25);display:block;margin-bottom:8px}
+.field{margin-bottom:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.card{padding:32px;border-left:3px solid rgba(192,57,43,0.2);transition:border-color 0.2s;margin-bottom:2px}
+.card:hover{border-left-color:#c0392b}
+.divider{width:48px;height:2px;background:#c0392b;margin:48px 0}
+.hidden{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.badge{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#c0392b;border:1px solid rgba(192,57,43,0.3);padding:4px 10px;display:inline-block}
+.stats-bar{border-top:1px solid rgba(240,235,224,0.08);border-bottom:1px solid rgba(240,235,224,0.08);display:flex;justify-content:center;gap:80px;padding:40px 48px;flex-wrap:wrap;background:rgba(192,57,43,0.03)}
+.stat{text-align:center}
+.stat-n{font-size:48px;color:#c0392b;font-family:'Bebas Neue',serif;letter-spacing:0.05em;line-height:1}
+.stat-l{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,235,224,0.35);margin-top:4px}
+.oath-box{border:2px solid rgba(240,235,224,0.1);padding:28px;margin-bottom:20px;transition:all 0.3s}
+.oath-box.taken{border-color:#c0392b;background:rgba(192,57,43,0.06)}
+.founding{border:2px solid #c0392b;padding:40px;background:rgba(192,57,43,0.05);margin:60px 0}
+.how-step{border-top:1px solid rgba(192,57,43,0.3);padding-top:24px}
+.how-n{font-size:64px;color:rgba(192,57,43,0.15);font-family:'Bebas Neue',serif;line-height:1;margin-bottom:16px}
+.film-card{border:1px solid rgba(240,235,224,0.08);padding:28px;background:rgba(255,255,255,0.02);transition:all 0.2s;margin-bottom:16px}
+.film-card:hover{border-color:rgba(192,57,43,0.4);background:rgba(192,57,43,0.04)}
+.town-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0392b;margin-right:8px}
+.map-town{padding:16px 20px;border-left:3px solid rgba(192,57,43,0.15);display:flex;justify-content:space-between;align-items:center;transition:all 0.2s;cursor:pointer}
+.map-town:hover{border-left-color:#c0392b;background:rgba(192,57,43,0.04)}
+.faq-item{border-bottom:1px solid rgba(240,235,224,0.08);padding:24px 0;cursor:pointer}
+.faq-q{font-size:17px;display:flex;justify-content:space-between;align-items:center;font-family:'Special Elite',serif}
+.faq-a{font-size:15px;line-height:1.8;color:rgba(240,235,224,0.6);margin-top:16px;display:none}
+.genre-btn{padding:8px 14px;font-size:11px;letter-spacing:0.1em;border:1px solid rgba(240,235,224,0.18);background:transparent;color:rgba(240,235,224,0.6);cursor:pointer;font-family:inherit;transition:all 0.15s}
+.genre-btn.selected{border-color:#c0392b;background:rgba(192,57,43,0.15);color:#c0392b}
+.roadmap-item{padding:32px 24px;border-top:3px solid rgba(240,235,224,0.08)}
+.roadmap-item.active{border-top-color:#c0392b;background:rgba(192,57,43,0.04)}
+.poster-strip{display:flex;gap:2px;overflow:hidden;height:280px;margin:0}
+.poster-strip img{width:25%;object-fit:cover;filter:grayscale(60%) contrast(1.1);transition:all 0.4s;opacity:0.7}
+.poster-strip img:hover{filter:grayscale(0%) contrast(1.2);opacity:1;transform:scale(1.02)}
+.film-grain{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vignette{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)}
+.slate-num{font-size:11px;letter-spacing:0.3em;color:rgba(240,235,224,0.2);font-family:'Bebas Neue',serif;border:1px solid rgba(240,235,224,0.1);padding:3px 10px;display:inline-block;margin-bottom:12px}
+.fund-check{width:22px;height:22px;border:2px solid rgba(240,235,224,0.2);border-radius:50%;flex-shrink:0}
+@media(max-width:700px){
+  nav{padding:16px 24px}
+  .page,.page-wide,.page-narrow{padding:48px 24px}
+  .grid2,.grid3,.grid4{grid-template-columns:1fr}
+  .stats-bar{gap:32px}
+  h1{font-size:clamp(48px,12vw,80px)}
+  .poster-strip{height:180px}
+}
 
-Good. Now let me rebuild the full site with the cinematic redesign.​​​​​​​​​​​​​​​​
+/* VHS INTRO */
+#vhs-intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;overflow:hidden}
+#vhs-intro.fade-out{animation:vhsFade 0.8s forwards}
+@keyframes vhsFade{0%{opacity:1}100%{opacity:0;pointer-events:none}}
+.scanlines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.15) 2px,rgba(0,0,0,0.15) 4px);pointer-events:none;z-index:2}
+.vhs-static{position:absolute;inset:0;opacity:0.08;z-index:1;background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’/%3E%3C/svg%3E”)}
+.tracking-lines{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.track-line{position:absolute;left:0;right:0;height:3px;background:rgba(255,255,255,0.06);animation:trackMove 4s linear infinite}
+.track-line:nth-child(2){animation-delay:-1.3s;height:6px;background:rgba(255,255,255,0.04)}
+.track-line:nth-child(3){animation-delay:-2.7s;height:2px}
+@keyframes trackMove{0%{top:-10px}100%{top:110%}}
+.vhs-tv{position:relative;z-index:4;text-align:center}
+.vhs-screen{width:320px;height:220px;background:#0a0a0a;border:3px solid #222;border-radius:4px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(0,0,0,0.8),inset 0 0 30px rgba(0,0,0,0.5)}
+.vhs-logo-text{font-family:‘Bebas Neue’,Georgia,serif;font-size:42px;color:#f0ebe0;letter-spacing:0.1em;line-height:1;margin-bottom:4px;text-shadow:2px 2px 0 rgba(192,57,43,0.5),-1px 0 rgba(0,200,255,0.3)}
+.vhs-logo-sub{font-size:10px;letter-spacing:0.6em;text-transform:uppercase;color:#c0392b;margin-bottom:20px}
+.vhs-counter{font-family:monospace;font-size:11px;color:rgba(240,235,224,0.3);letter-spacing:0.2em;margin-bottom:16px}
+.press-play{font-family:‘Bebas Neue’,Georgia,serif;font-size:22px;letter-spacing:0.4em;color:#f0ebe0;animation:blink 1.2s step-end infinite;display:flex;align-items:center;gap:12px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.play-icon{width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #c0392b;display:inline-block}
+.vhs-tape-label{margin-top:16px;background:#1a1a1a;border:1px solid #333;padding:8px 20px;width:320px}
+.tape-title{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,235,224,0.5);text-align:center}
+.tape-sub{font-size:9px;letter-spacing:0.2em;color:#c0392b;text-align:center;margin-top:4px}
+.vhs-bottom{position:absolute;bottom:20px;left:0;right:0;text-align:center;z-index:4}
+.vhs-hint{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,235,224,0.2)}
+.rgb-shift{animation:rgbShift 8s ease-in-out infinite}
+@keyframes rgbShift{0%,100%{text-shadow:2px 2px 0 rgba(192,57,43,0.5),-1px 0 rgba(0,200,255,0.3)}50%{text-shadow:-2px 2px 0 rgba(192,57,43,0.6),2px 0 rgba(0,200,255,0.4)}}
+</style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#f0ebe0;font-family:Georgia,serif}
+input,textarea,select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(240,235,224,0.15);color:#f0ebe0;padding:14px 16px;font-size:15px;font-family:inherit;outline:none;box-sizing:border-box}
+select{background:#111}
+label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,235,224,0.4);display:block;margin-bottom:8px}
+.btn{padding:16px 36px;background:#c0392b;border:none;color:#f0ebe0;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit;font-weight:bold}
+.btn:hover{background:#a93226}
+.btn-ghost{padding:16px 36px;background:transparent;border:1px solid rgba(240,235,224,0.25);color:rgba(240,235,224,0.6);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.btn-sm{padding:10px 20px;font-size:11px;letter-spacing:0.15em}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:1px solid rgba(240,235,224,0.1);flex-wrap:wrap;gap:16px;position:sticky;top:0;background:#0a0a0a;z-index:100}
+.nav-links{display:flex;gap:20px;font-size:11px;letter-spacing:0.12em;flex-wrap:wrap}
+.nav-links span{color:rgba(240,235,224,0.5);cursor:pointer;transition:color 0.2s}
+.nav-links span:hover{color:#f0ebe0}
+.page{max-width:900px;margin:0 auto;padding:80px 48px}
+.page-wide{max-width:1100px;margin:0 auto;padding:80px 48px}
+.page-narrow{max-width:620px;margin:0 auto;padding:80px 48px}
+.red{color:#c0392b}
+.muted{color:rgba(240,235,224,0.5)}
+h1{font-size:clamp(48px,8vw,96px);line-height:1.0;font-weight:normal;letter-spacing:-0.02em}
+h2{font-size:clamp(32px,5vw,64px);font-weight:normal;line-height:1.1}
+h3{font-size:22px;font-weight:normal}
+.tag{font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:#c0392b;margin-bottom:24px;display:block}
+.field{margin-bottom:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.card{padding:32px;border-left:3px solid rgba(192,57,43,0.2);transition:border-color 0.2s;margin-bottom:2px}
+.card:hover{border-left-color:#c0392b}
+.divider{width:48px;height:2px;background:#c0392b;margin:48px 0}
+.hidden{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.badge{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#c0392b;border:1px solid rgba(192,57,43,0.3);padding:4px 10px;display:inline-block}
+.stats-bar{border-top:1px solid rgba(240,235,224,0.1);border-bottom:1px solid rgba(240,235,224,0.1);display:flex;justify-content:center;gap:80px;padding:32px 48px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-n{font-size:32px;color:#c0392b;font-style:italic}
+.stat-l{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.4);margin-top:4px}
+.oath-box{border:2px solid rgba(240,235,224,0.1);padding:28px;margin-bottom:20px;transition:all 0.3s}
+.oath-box.taken{border-color:#c0392b;background:rgba(192,57,43,0.06)}
+.founding{border:2px solid #c0392b;padding:40px;background:rgba(192,57,43,0.05);margin:60px 0}
+.how-step{border-top:1px solid rgba(192,57,43,0.3);padding-top:24px}
+.how-n{font-size:48px;color:rgba(192,57,43,0.2);font-style:italic;margin-bottom:16px}
+.film-card{border:1px solid rgba(240,235,224,0.08);padding:28px;background:rgba(255,255,255,0.02);transition:all 0.2s;margin-bottom:16px}
+.film-card:hover{border-color:rgba(192,57,43,0.4);background:rgba(192,57,43,0.04)}
+.town-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#c0392b;margin-right:8px}
+.map-town{padding:16px 20px;border-left:3px solid rgba(192,57,43,0.15);display:flex;justify-content:space-between;align-items:center;transition:all 0.2s;cursor:pointer}
+.map-town:hover{border-left-color:#c0392b;background:rgba(192,57,43,0.04)}
+.faq-item{border-bottom:1px solid rgba(240,235,224,0.08);padding:24px 0;cursor:pointer}
+.faq-q{font-size:17px;display:flex;justify-content:space-between;align-items:center}
+.faq-a{font-size:15px;line-height:1.8;color:rgba(240,235,224,0.6);margin-top:16px;display:none}
+.press-card{border:1px solid rgba(240,235,224,0.08);padding:28px;background:rgba(255,255,255,0.02)}
+.genre-btn{padding:8px 14px;font-size:11px;letter-spacing:0.1em;border:1px solid rgba(240,235,224,0.18);background:transparent;color:rgba(240,235,224,0.6);cursor:pointer;font-family:inherit;transition:all 0.15s}
+.genre-btn.selected{border-color:#c0392b;background:rgba(192,57,43,0.15);color:#c0392b}
+.roadmap-item{padding:32px 24px;border-top:3px solid rgba(240,235,224,0.1)}
+.roadmap-item.active{border-top-color:#c0392b;background:rgba(192,57,43,0.04)}
+@media(max-width:700px){
+nav{padding:16px 24px}
+.page,.page-wide,.page-narrow{padding:48px 24px}
+.grid2,.grid3,.grid4{grid-template-columns:1fr}
+.stats-bar{gap:32px}
+h1{font-size:clamp(36px,10vw,72px)}
+}
+</style>
 
-All good. Let me present it.​​​​​​​​​​​​​​​​
+</head>
+<body>
 
-Here’s everything that’s new in this version:
-Cinematic redesign:
-	∙	Bebas Neue — big dramatic display font for all headings
-	∙	Special Elite — typewriter feel for body text
-	∙	Film grain texture across the whole site
-	∙	Dark vignette effect around edges
-	∙	Scene slate numbers on each section (“SCENE 01 / THE REVOLUTION BEGINS”)
-Poster strip on homepage:
-	∙	Nosferatu (1922), Cabinet of Dr. Caligari (1920), Metropolis (1927), Phantom of the Opera (1925)
-	∙	Hover to see them in full colour
-	∙	Red bar underneath: “Your film could be here →”
-Nav clapperboard icons:
-	∙	Each nav link shows a film equipment icon when you hover
-The Fund page — fully working
-Supabase connected — real signups saved, real counter
-Paste this into GitHub via the Netlify agent and let it fix the smart quotes. ✊​​​​​​​​​​​​​​​​
+<div class="film-grain"></div>
+<div class="vignette"></div>
+
+<div id="vhs-intro" onclick="enterSite()">
+  <div class="vhs-static"></div>
+  <div class="scanlines"></div>
+  <div class="tracking-lines">
+    <div class="track-line"></div>
+    <div class="track-line"></div>
+    <div class="track-line"></div>
+  </div>
+  <div class="vhs-tv">
+    <div class="vhs-screen">
+      <div class="vhs-logo-text rgb-shift">INDIE</div>
+      <div class="vhs-logo-text rgb-shift" style="color:#c0392b">REVOLUTIONS</div>
+      <div class="vhs-logo-sub">Self-Distribution for the People</div>
+      <div class="vhs-counter" id="vhs-counter">SP &#x25CF; 00:00:00</div>
+      <div class="press-play">
+        <span class="play-icon"></span>
+        <span>PRESS PLAY</span>
+      </div>
+    </div>
+    <div class="vhs-tape-label">
+      <div class="tape-title">INDIE REVOLUTIONS &#x2014; VOLUME 1</div>
+      <div class="tape-sub">&#x1F3AC; BURN DOWN THE GATEKEEPERS &#x1F3AC;</div>
+    </div>
+  </div>
+  <div class="vhs-bottom">
+    <div class="vhs-hint">Tap anywhere to enter</div>
+  </div>
+</div>
+
+<nav>
+  <div onclick="show('home')" style="cursor:pointer;display:flex;align-items:center;gap:10px">
+    <img src="data:image/jpeg;base64,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" style="width:40px;height:40px;object-fit:cover;border-radius:4px"/>
+    <span style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase">Indie <span class="red">Revolutions</span></span>
+  </div>
+  <div class="nav-links">
+    <span class="nav-link" onclick="show('home')"><span>Home</span><span class="clap">&#x1F3AC;</span></span>
+    <span class="nav-link" onclick="show('films')"><span>Films on Tour</span><span class="clap">&#x1F4FD;</span></span>
+    <span class="nav-link" onclick="show('renegade')"><span>Join</span><span class="clap">&#x1F3AC;</span></span>
+    <span class="nav-link" onclick="show('filmmaker')"><span>Filmmakers</span><span class="clap">&#x1F3A5;</span></span>
+    <span class="nav-link" onclick="show('nights')"><span>The Nights</span><span class="clap">&#x1F39E;</span></span>
+    <span class="nav-link" onclick="show('venues')"><span>Venues</span><span class="clap">&#x1F526;</span></span>
+    <span class="nav-link" onclick="show('heatmap')"><span>Heat Map</span><span class="clap">&#x1F4CD;</span></span>
+    <span class="nav-link" onclick="show('faq')"><span>FAQ</span><span class="clap">&#x1F3AC;</span></span>
+    <span class="nav-link" onclick="show('press')"><span>Press</span><span class="clap">&#x1F4F0;</span></span>
+    <span class="nav-link" onclick="show('code')"><span>The Code</span><span class="clap">&#x270A;</span></span>
+    <span class="nav-link" onclick="show('fund')" style="color:#c0392b"><span>The Fund</span><span class="clap">&#x1F3AC;</span></span>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HOME ═══════════════════ -->
+
+<div id="home">
+  <div class="page" style="text-align:center">
+    <span class="tag">✊ The Independent Film Movement</span>
+    <img src="data:image/jpeg;base64,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" style="width:120px;height:120px;object-fit:cover;border-radius:8px;margin-bottom:32px;box-shadow:0 0 40px rgba(192,57,43,0.3)"/>
+    <h1>Burn down<br><em class="red">the gatekeepers.</em><br>Screen everywhere.</h1>
+    <p style="font-size:18px;line-height:1.7;color:rgba(240,235,224,0.6);max-width:580px;margin:32px auto">Indie Revolutions connects Renegades in every American town with independent films on tour. No studios. No gatekeepers. Just great cinema finding its people.</p>
+    <p style="font-size:15px;color:#c0392b;font-style:italic;margin-bottom:48px">No more being told what's cool. We are our own culture. ✊</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">
+      <button class="btn" onclick="show('renegade')">Become a Renegade →</button>
+      <button class="btn-ghost" onclick="show('filmmaker')">I Have a Film</button>
+      <button class="btn-ghost" onclick="show('code')" style="border-color:rgba(192,57,43,0.4);color:#c0392b">The Code ✊</button>
+    </div>
+    <div style="margin-top:16px">
+      <span onclick="show('films')" style="font-size:13px;color:rgba(240,235,224,0.4);cursor:pointer;text-decoration:underline">See films currently on tour →</span>
+    </div>
+  </div>
+  <div style="margin-top:64px">
+    <div class="poster-strip">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Nosferatu_poster.jpg/687px-Nosferatu_poster.jpg" alt="Nosferatu 1922"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Das_Cabinet_des_Dr._Caligari.jpg/543px-Das_Cabinet_des_Dr._Caligari.jpg" alt="Cabinet of Dr Caligari 1920"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Metropolis_%281927_film%29.jpg/550px-Metropolis_%281927_film%29.jpg" alt="Metropolis 1927"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Phantom_of_the_opera_1925_poster.jpg/500px-Phantom_of_the_opera_1925_poster.jpg" alt="Phantom of the Opera 1925"/>
+    </div>
+    <div style="background:#c0392b;padding:8px 48px;display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(240,235,224,0.7)">Public domain classics — cinema before the gatekeepers</span>
+      <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,235,224,0.7)">Your film could be here →</span>
+    </div>
+  </div>
+
+  <div class="founding" style="max-width:900px;margin:0 auto 0;margin-left:auto;margin-right:auto">
+    <span class="tag">🏆 The Founding 500</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px">
+      <div style="max-width:480px">
+        <h2 style="font-size:36px;margin-bottom:16px">Be part of history.<br><em class="red">Never made again.</em></h2>
+        <p style="font-size:15px;line-height:1.8;color:rgba(240,235,224,0.6);margin-bottom:16px">The first 500 Renegades receive the <strong>Indie Revolutions Founding Trophy</strong> — cast with the original founding logo, never reproduced, never sold. Proof you were here at the beginning.</p>
+        <p style="font-size:13px;color:rgba(240,235,224,0.35);font-style:italic;margin-bottom:24px">After 500, the mold is destroyed. These will never exist again.</p>
+        <button class="btn" onclick="show('renegade')">Claim Your Spot →</button>
+      </div>
+      <div style="text-align:center;min-width:160px">
+        <div style="font-size:72px;color:#c0392b;font-style:italic;line-height:1" id="spots-home">153</div>
+        <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.4);margin-top:8px">spots remaining</div>
+        <div style="margin-top:16px;height:4px;background:rgba(240,235,224,0.1);border-radius:2px">
+          <div style="height:100%;width:69%;background:#c0392b;border-radius:2px"></div>
+        </div>
+        <div style="font-size:11px;color:rgba(240,235,224,0.3);margin-top:8px">347 of 500 claimed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-n">47,000+</div><div class="stat-l">Renegades</div></div>
+    <div class="stat"><div class="stat-n">1,200+</div><div class="stat-l">Towns</div></div>
+    <div class="stat"><div class="stat-n">340+</div><div class="stat-l">Films on Tour</div></div>
+    <div class="stat"><div class="stat-n">50</div><div class="stat-l">States</div></div>
+  </div>
+
+  <div class="page">
+    <span class="tag">How the Revolution Works</span>
+    <div class="grid3">
+      <div class="how-step"><div class="how-n">01</div><div style="font-size:16px;margin-bottom:12px">Renegades Sign Up</div><div style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Film lovers in every town register their location, taste, and local venues that could host a screening.</div></div>
+      <div class="how-step"><div class="how-n">02</div><div style="font-size:16px;margin-bottom:12px">Films Hit the Road</div><div style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Filmmakers list their film and tour towns. We match them with Renegades and venues already waiting.</div></div>
+      <div class="how-step"><div class="how-n">03</div><div style="font-size:16px;margin-bottom:12px">Towns Ignite</div><div style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Renegades get notified. Venues get booked. Films get screened. Every dollar goes to the filmmaker.</div></div>
+    </div>
+    <div style="margin-top:64px">
+      <span class="tag">The Revolution Roadmap</span>
+      <div class="grid4">
+        <div class="roadmap-item active"><div style="display:flex;justify-content:space-between;margin-bottom:16px"><span style="font-size:32px;font-style:italic;color:rgba(192,57,43,0.4)">01</span><span class="badge">NOW</span></div><h3 style="margin-bottom:12px">Film</h3><p style="font-size:13px;line-height:1.7;color:rgba(240,235,224,0.55)">Indie films. Real stories. Renegades in every town showing up for filmmakers who bet everything on their vision.</p></div>
+        <div class="roadmap-item"><div style="display:flex;justify-content:space-between;margin-bottom:16px"><span style="font-size:32px;font-style:italic;color:rgba(240,235,224,0.08)">02</span><span style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.2);border:1px solid rgba(240,235,224,0.1);padding:4px 8px">NEXT</span></div><h3 style="margin-bottom:12px;color:rgba(240,235,224,0.4)">Music</h3><p style="font-size:13px;line-height:1.7;color:rgba(240,235,224,0.25)">Independent artists. No label. No radio gatekeepers. Just musicians finding the towns that need to hear them.</p></div>
+        <div class="roadmap-item"><div style="display:flex;justify-content:space-between;margin-bottom:16px"><span style="font-size:32px;font-style:italic;color:rgba(240,235,224,0.08)">03</span><span style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.2);border:1px solid rgba(240,235,224,0.1);padding:4px 8px">COMING</span></div><h3 style="margin-bottom:12px;color:rgba(240,235,224,0.4)">Art</h3><p style="font-size:13px;line-height:1.7;color:rgba(240,235,224,0.25)">Pop-ups. Installations. Shows in warehouses and community spaces. Art that doesn't wait for a gallery to say yes.</p></div>
+        <div class="roadmap-item"><div style="display:flex;justify-content:space-between;margin-bottom:16px"><span style="font-size:32px;font-style:italic;color:rgba(240,235,224,0.08)">04</span><span style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.2);border:1px solid rgba(240,235,224,0.1);padding:4px 8px">FUTURE</span></div><h3 style="margin-bottom:12px;color:rgba(240,235,224,0.4)">And Beyond</h3><p style="font-size:13px;line-height:1.7;color:rgba(240,235,224,0.25)">Theatre. Comedy. Poetry. Every art form shut out by the gatekeepers has a home here.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(192,57,43,0.2);padding:64px 48px;text-align:center;background:rgba(192,57,43,0.04)">
+    <span class="tag">Want to help build the revolution?</span>
+    <p style="font-size:20px;font-style:italic;color:rgba(240,235,224,0.7);max-width:600px;margin:0 auto 32px;line-height:1.7">If you have a skill, an idea, and a belief that indie film matters — we want to hear from you.</p>
+    <button class="btn" onclick="show('involved')">Get Involved ✊</button>
+  </div>
+  <div style="padding:32px 48px;text-align:center;border-top:1px solid rgba(240,235,224,0.06)">
+    <p style="font-size:11px;color:rgba(240,235,224,0.2);letter-spacing:0.15em">✊ INDIE REVOLUTIONS — SELF-DISTRIBUTION FOR THE PEOPLE — hello@indierevolutions.com</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ FILMS ON TOUR ═══════════════════ -->
+
+<div id="films" style="display:none">
+  <div class="page">
+    <span class="tag">✊ Currently Touring</span>
+    <h2 style="margin-bottom:16px">Films on Tour</h2>
+    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">These filmmakers bet everything on their vision. Show up for them.</p>
+    <div id="films-list"></div>
+    <div style="margin-top:64px;border:1px solid rgba(192,57,43,0.2);padding:40px;background:rgba(192,57,43,0.03)">
+      <span class="tag">Are you a filmmaker?</span>
+      <h3 style="margin-bottom:16px">List your film here</h3>
+      <p style="font-size:15px;line-height:1.8;color:rgba(240,235,224,0.5);margin-bottom:24px">Get your film in front of thousands of Renegades across America who are waiting for exactly what you made.</p>
+      <button class="btn" onclick="show('filmmaker')">List My Film →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ HEAT MAP ═══════════════════ -->
+
+<div id="heatmap" style="display:none">
+  <div class="page-wide">
+    <span class="tag">✊ Renegade Density</span>
+    <h2 style="margin-bottom:16px">The Heat Map</h2>
+    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">Filmmakers — this shows you exactly where your audience is waiting. Every dot is a Renegade ready to show up.</p>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:start">
+      <div>
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(240,235,224,0.08);padding:48px;text-align:center;margin-bottom:24px;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div style="font-size:80px;margin-bottom:24px">🗺️</div>
+          <p style="font-size:16px;color:rgba(240,235,224,0.4);margin-bottom:8px">Interactive heat map</p>
+          <p style="font-size:13px;color:rgba(240,235,224,0.25);line-height:1.7">Full interactive map launches with the live platform.<br>Sign up as a filmmaker to get early access.</p>
+          <button class="btn" onclick="show('filmmaker')" style="margin-top:24px">Get Early Access →</button>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,235,224,0.3);margin-bottom:24px">Top Towns by Renegades</p>
+        <div id="heatmap-towns"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ RENEGADE SIGNUP ═══════════════════ -->
+
+<div id="renegade" style="display:none">
+  <div class="page-narrow">
+    <span class="tag">Renegade Registration</span>
+    <h2 style="font-size:40px;margin-bottom:8px">Join the revolution</h2>
+    <p style="font-size:14px;color:rgba(240,235,224,0.5);margin-bottom:40px;line-height:1.7">When an indie film comes to your area, you'll be the first to know.</p>
+    <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.3);padding:16px 20px;margin-bottom:32px;display:flex;justify-content:space-between;align-items:center">
+      <div><p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c0392b;margin-bottom:4px">🏆 Founding 500</p><p style="font-size:13px;color:rgba(240,235,224,0.6)">You qualify for the Founding Trophy</p></div>
+      <div style="text-align:right"><div style="font-size:28px;color:#c0392b;font-style:italic" id="spots-form">153</div><div style="font-size:10px;color:rgba(240,235,224,0.35)">spots left</div></div>
+    </div>
+    <div class="hidden"><input id="honeypot" tabindex="-1" autocomplete="off"/></div>
+    <div class="field"><label>Full Name</label><input id="r-name" type="text"/></div>
+    <div class="field"><label>Email Address</label><input id="r-email" type="email"/></div>
+    <div class="grid2" style="margin-bottom:20px">
+      <div><label>City / Town</label><input id="r-city" type="text"/></div>
+      <div><label>State</label><select id="r-state"><option value="">—</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></div>
+    </div>
+    <div class="field"><label>Name a film you love ✊</label><input id="r-film" type="text" placeholder="This is how we know you're human"/></div>
+    <div class="field">
+      <label>Your Top 3 Genres</label>
+      <div id="genre-pills" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+    </div>
+    <div class="oath-box" id="oath">
+      <span class="tag">✊ The Renegade Oath</span>
+      <p style="font-size:15px;line-height:1.8;color:rgba(240,235,224,0.75);font-style:italic;margin-bottom:16px">"I am here for movies and the positive things they bring. I will lift others up, judge no one, and welcome every creed into the dark beside me. The world is hard enough. In here, we are Renegades — all of us, together."</p>
+      <p style="font-size:16px;color:#c0392b;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:20px">Lights. Camera. Action.</p>
+      <button onclick="takeOath()" id="oath-btn" style="padding:12px 24px;background:transparent;border:1px solid rgba(192,57,43,0.5);color:#c0392b;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:inherit">I Take This Oath</button>
+    </div>
+    <div style="display:flex;gap:12px">
+      <button class="btn-ghost" onclick="show('home')">← Back</button>
+      <button class="btn" id="join-btn" onclick="joinRevolution()" style="flex:1;opacity:0.4">Take the Oath to Continue</button>
+    </div>
+    <p style="font-size:12px;color:rgba(240,235,224,0.25);margin-top:24px">No spam. No selling your data. Renegades only.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════ FILMMAKER ═══════════════════ -->
+
+<div id="filmmaker" style="display:none">
+  <div class="page-narrow">
+    <span class="tag">Filmmaker Registration</span>
+    <h2 style="font-size:40px;margin-bottom:8px">Tour your film</h2>
+    <p style="font-size:14px;color:rgba(240,235,224,0.5);margin-bottom:40px;line-height:1.7">Tell us about your film and where you can get to. We'll match you with Renegades and venues already waiting.</p>
+    <div class="field"><label>Your Name</label><input id="f-name" type="text"/></div>
+    <div class="field"><label>Your Email</label><input id="f-email" type="email"/></div>
+    <div class="field"><label>Film Title</label><input id="f-film" type="text"/></div>
+    <div class="grid2" style="margin-bottom:20px">
+      <div><label>Release Year</label><input id="f-year" type="text"/></div>
+      <div><label>Genre</label><select id="f-genre"><option value="">—</option><option>Drama</option><option>Documentary</option><option>Comedy</option><option>Horror</option><option>Sci-Fi</option><option>Experimental</option><option>Animation</option><option>Thriller</option><option>Romance</option><option>Foreign Language</option><option>Action</option></select></div>
+    </div>
+    <div class="field"><label>One-Line Synopsis</label><textarea id="f-synopsis" rows="3"></textarea></div>
+    <div style="border:1px solid rgba(192,57,43,0.25);padding:24px;background:rgba(192,57,43,0.03);margin-bottom:20px">
+      <span class="tag">✊ Towns I Can Reach</span>
+      <p style="font-size:13px;color:rgba(240,235,224,0.45);line-height:1.7;margin-bottom:16px">List every city and town you can physically get to. We'll show you a heat map of Renegade interest in each one.</p>
+      <div class="field"><label>Towns / Cities (comma separated)</label><textarea id="f-towns" rows="2" placeholder="e.g. Austin TX, New Orleans LA, Nashville TN"></textarea></div>
+      <div class="field"><label>Travel Budget</label><select id="f-budget"><option value="">— Select your situation</option><option>I can self-fund travel</option><option>I need ticket sales to cover travel</option><option>I need venue or sponsor support</option></select></div>
+    </div>
+    <div style="display:flex;gap:12px">
+      <button class="btn-ghost" onclick="show('home')">← Back</button>
+      <button class="btn" onclick="filmSubmit()" style="flex:1">List My Film →</button>
+    </div>
+    <div style="margin-top:40px;padding:24px;border:1px solid rgba(192,57,43,0.2);background:rgba(192,57,43,0.04)">
+      <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#c0392b;margin-bottom:12px">What you get</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Heat map of Renegade interest across every US town</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Matched to Renegade-submitted venues in your tour towns</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Automated notifications sent to matched Renegades</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.6);line-height:1.8;margin-bottom:6px">✊ Direct filmmaker payout — you keep your rights. Always.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ THE NIGHTS ═══════════════════ -->
+
+<div id="nights" style="display:none">
+  <div class="page">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:16px">
+      <div><span class="tag">✊ Community Memory Wall</span><h2>The Nights</h2></div>
+      <button class="btn btn-sm" onclick="toggleForm('night-form')" style="margin-top:8px">+ Were You There?</button>
+    </div>
+    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">No Rotten Tomatoes. No thumbs up or down. Here we share memories of the movies that brought friends and Renegades together. It's never wasted time when you're with friends.</p>
+    <div id="night-form" style="display:none;background:rgba(192,57,43,0.04);border:1px solid rgba(192,57,43,0.2);padding:32px;margin-bottom:48px">
+      <span class="tag">Share Your Night</span>
+      <div class="grid3" style="margin-bottom:16px">
+        <div><label>Film Title</label><input id="n-film" type="text"/></div>
+        <div><label>Director</label><input id="n-director" type="text"/></div>
+        <div><label>Year</label><input id="n-year" type="text"/></div>
+      </div>
+      <div class="grid2" style="margin-bottom:16px">
+        <div><label>Your Name</label><input id="n-name" type="text"/></div>
+        <div><label>Your Town</label><input id="n-town" type="text"/></div>
+      </div>
+      <div class="field"><label>What was the night like? Who were you with?</label><textarea id="n-moment" rows="3" placeholder="Who were you with? What happened after the lights came up?"></textarea></div>
+      <button class="btn" onclick="addNight()">Add to The Nights →</button>
+    </div>
+    <div id="nights-list"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ VENUES ═══════════════════ -->
+
+<div id="venues" style="display:none">
+  <div class="page">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:16px">
+      <div><span class="tag">✊ Renegade Venues</span><h2>Where We Screen</h2></div>
+      <button class="btn btn-sm" onclick="toggleForm('venue-form')" style="margin-top:8px">+ Add a Venue</button>
+    </div>
+    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px;max-width:640px">Know a spot that could host an indie screening? A bar with a back room, a community hall, a warehouse? Add it here — filmmakers on tour are looking right now.</p>
+    <div id="venue-form" style="display:none;background:rgba(192,57,43,0.04);border:1px solid rgba(192,57,43,0.2);padding:32px;margin-bottom:48px">
+      <span class="tag">Submit a Venue</span>
+      <div class="grid2" style="margin-bottom:16px">
+        <div><label>Venue Name</label><input id="v-name" type="text"/></div>
+        <div><label>Town / City</label><input id="v-town" type="text"/></div>
+      </div>
+      <div class="grid2" style="margin-bottom:16px">
+        <div><label>Address</label><input id="v-address" type="text"/></div>
+        <div><label>Capacity</label><input id="v-capacity" type="text"/></div>
+      </div>
+      <div class="field"><label>Type</label><select id="v-type"><option value="">—</option><option>Independent Theatre</option><option>Bar with Screen</option><option>Community Hall</option><option>Warehouse</option><option>Art Space</option><option>Church Hall</option><option>Outdoor</option><option>Other</option></select></div>
+      <div class="field"><label>Insider Note — What makes it special?</label><textarea id="v-note" rows="2" placeholder="Best popcorn in town? Filmmaker friendly? Owner gives filmmakers free drinks?"></textarea></div>
+      <button class="btn" onclick="addVenue()">Add This Venue →</button>
+    </div>
+    <div id="venues-list"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════ GET INVOLVED ═══════════════════ -->
+
+<div id="involved" style="display:none">
+  <div class="page-narrow">
+    <span class="tag">✊ Join the Movement</span>
+    <h2 style="margin-bottom:24px">Want to help build<br><em class="red">the revolution?</em></h2>
+    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.55);margin-bottom:48px">If you have a skill, an idea, and a belief that indie film matters — we want to hear from you.</p>
+    <div id="involved-success" style="display:none;text-align:center;padding:64px 0">
+      <div style="font-size:48px;margin-bottom:24px">✊</div>
+      <h3 style="font-size:32px;margin-bottom:16px">Message received.</h3>
+      <p style="font-size:16px;color:rgba(240,235,224,0.5);line-height:1.7">We'll be in touch. The revolution is built by people like you.</p>
+    </div>
+    <div id="involved-form">
+      <div class="hidden"><input id="inv-honeypot" tabindex="-1" autocomplete="off"/></div>
+      <div class="field"><label>Your Name</label><input id="inv-name" type="text"/></div>
+      <div class="field"><label>Your Email</label><input id="inv-email" type="email"/></div>
+      <div class="field"><label>Your Skill</label><select id="inv-skill"><option value="">— What do you bring?</option><option>Filmmaker</option><option>Venue Owner</option><option>Designer</option><option>Developer</option><option>Marketer</option><option>Photographer</option><option>Writer</option><option>Musician</option><option>Event Organiser</option><option>PR &amp; Media</option><option>Distributor</option><option>Other</option></select></div>
+      <div class="field"><label>Your Idea</label><textarea id="inv-idea" rows="5" placeholder="Tell us what you want to bring. Be specific. Be bold. We're listening."></textarea></div>
+      <div class="field"><label>Name a film that changed you ✊</label><input id="inv-film" type="text" placeholder="This is how we know you're human"/></div>
+      <div style="display:flex;gap:12px">
+        <button class="btn-ghost" onclick="show('home')">← Back</button>
+        <button class="btn" onclick="involvedSubmit()" style="flex:1">Send It ✊</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ FAQ ═══════════════════ -->
+
+<div id="faq" style="display:none">
+  <div class="page-narrow">
+    <span class="tag">✊ Questions</span>
+    <h2 style="margin-bottom:16px">Frequently Asked</h2>
+    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px">Everything you need to know about the revolution.</p>
+    <div id="faq-list"></div>
+    <div style="margin-top:64px;padding:32px;background:rgba(192,57,43,0.04);border:1px solid rgba(192,57,43,0.2);text-align:center">
+      <p style="font-size:16px;color:rgba(240,235,224,0.6);margin-bottom:16px">Still have questions?</p>
+      <p style="font-size:15px;color:#c0392b">hello@indierevolutions.com</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PRESS ═══════════════════ -->
+
+<div id="press" style="display:none">
+  <div class="page-narrow">
+    <span class="tag">✊ Media & Press</span>
+    <h2 style="margin-bottom:16px">Press Room</h2>
+    <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.45);margin-bottom:48px">Covering the independent film revolution? We'd love to talk.</p>
+    <div style="padding:40px;border:1px solid rgba(192,57,43,0.3);background:rgba(192,57,43,0.04);margin-bottom:48px">
+      <span class="tag">Press Contact</span>
+      <p style="font-size:20px;margin-bottom:8px">hello@indierevolutions.com</p>
+      <p style="font-size:14px;color:rgba(240,235,224,0.5);line-height:1.7">We respond to all press enquiries within 24 hours. For interview requests, please include your publication and deadline.</p>
+    </div>
+    <div style="margin-bottom:48px">
+      <span class="tag">The Story</span>
+      <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.65);margin-bottom:24px">Indie Revolutions was built because the system was never built for the little guy. Independent filmmakers pour everything into their work — and then watch it die on a hard drive because they can't get a meeting in Hollywood.</p>
+      <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.65)">We built a platform that matches indie films with the people in every American town who are hungry for exactly what those filmmakers made. No studios. No algorithms. Just cinema finding its people.</p>
+    </div>
+    <div style="margin-bottom:48px">
+      <span class="tag">Key Facts</span>
+      <div class="grid2">
+        <div style="padding:24px;border:1px solid rgba(240,235,224,0.08)"><div style="font-size:28px;color:#c0392b;font-style:italic;margin-bottom:8px">47,000+</div><div style="font-size:13px;color:rgba(240,235,224,0.5)">Registered Renegades across the US</div></div>
+        <div style="padding:24px;border:1px solid rgba(240,235,224,0.08)"><div style="font-size:28px;color:#c0392b;font-style:italic;margin-bottom:8px">1,200+</div><div style="font-size:13px;color:rgba(240,235,224,0.5)">Towns with active Renegades</div></div>
+        <div style="padding:24px;border:1px solid rgba(240,235,224,0.08)"><div style="font-size:28px;color:#c0392b;font-style:italic;margin-bottom:8px">340+</div><div style="font-size:13px;color:rgba(240,235,224,0.5)">Films currently on tour</div></div>
+        <div style="padding:24px;border:1px solid rgba(240,235,224,0.08)"><div style="font-size:28px;color:#c0392b;font-style:italic;margin-bottom:8px">50</div><div style="font-size:13px;color:rgba(240,235,224,0.5)">States represented</div></div>
+      </div>
+    </div>
+    <div>
+      <span class="tag">Brand Assets</span>
+      <p style="font-size:15px;color:rgba(240,235,224,0.5);line-height:1.8;margin-bottom:24px">Logo files, brand guidelines, and photography available on request. Email hello@indierevolutions.com with subject line "Press Assets".</p>
+      <p style="font-size:13px;color:rgba(240,235,224,0.35)">Primary colour: #c0392b · Background: #0a0a0a · Font: Georgia</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ THE CODE ═══════════════════ -->
+
+<div id="code" style="display:none">
+  <div class="page-narrow">
+    <span class="tag">✊ The Renegade Code</span>
+    <h2 style="margin-bottom:48px">There is<br><em class="red">one rule.</em></h2>
+    <div class="divider"></div>
+    <p style="font-size:22px;line-height:1.8;font-style:italic;margin-bottom:32px">We talk about movies and the positive things they bring into our lives. Nothing more. Nothing less.</p>
+    <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.6);margin-bottom:32px">The world outside is a minefield of negativity, judgement, and noise. Leave it at the door.</p>
+    <div style="border-left:3px solid #c0392b;padding-left:32px;margin-bottom:40px">
+      <p style="font-size:20px;line-height:1.8;font-style:italic">"We are warriors — for film, for culture, for each other. Every creed. Every background. Every person who has ever felt like the world wrote them off."</p>
+    </div>
+    <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.6);margin-bottom:32px">We don't judge. We don't tear down. We lift up. If you've fallen — from grace, from hope, from belonging — there is a seat for you in the dark next to us.</p>
+    <div style="background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.2);padding:40px;text-align:center;margin-bottom:48px">
+      <p style="font-size:28px;font-style:italic;line-height:1.7;margin-bottom:16px">We are Renegades.<br>All of us.<br><span class="red">Together.</span></p>
+      <p style="font-size:22px;color:#c0392b;letter-spacing:0.2em;text-transform:uppercase">Lights. Camera. Action.</p>
+    </div>
+    <button class="btn" onclick="show('renegade')">Take the Oath & Join →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════ MANIFESTO ═══════════════════ -->
+
+<div id="manifesto" style="display:none">
+  <div class="page-narrow">
+    <span class="tag">✊ Our Mission</span>
+    <h2 style="margin-bottom:48px">Indie Revolutions<br><em class="red">exists for the little guy.</em></h2>
+    <div class="divider"></div>
+    <p style="font-size:20px;line-height:1.8;font-style:italic;margin-bottom:32px">For the filmmaker who maxed out their credit card, shot on weekends, and poured every piece of themselves into a story the world needs to hear — but can't get a meeting in Hollywood.</p>
+    <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.65);margin-bottom:32px">And for the Renegades. The people in every town who are done with sequels and algorithms. Who want cinema that punches them in the gut and changes how they see the world.</p>
+    <div style="border-left:3px solid #c0392b;padding-left:32px;margin-bottom:32px">
+      <p style="font-size:20px;line-height:1.8;font-style:italic">"No more being told what's cool by Hollywood or any corporation. We are not their audience. We are our own culture — built by real people, in real towns, around real stories."</p>
+    </div>
+    <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.65);margin-bottom:32px">We built Indie Revolutions because the system was never built for the little guy. Studios take 90 cents on every dollar. Algorithms decide what the world gets to see.</p>
+    <div class="grid3" style="margin-bottom:48px">
+      <div style="border-top:1px solid rgba(192,57,43,0.4);padding-top:24px"><p style="font-size:14px;color:#c0392b;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px">Entertain</p><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Because joy, laughter, fear, and wonder are worth fighting for.</p></div>
+      <div style="border-top:1px solid rgba(192,57,43,0.4);padding-top:24px"><p style="font-size:14px;color:#c0392b;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px">Influence</p><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Because a single film can shift how a generation thinks.</p></div>
+      <div style="border-top:1px solid rgba(192,57,43,0.4);padding-top:24px"><p style="font-size:14px;color:#c0392b;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px">Change the World</p><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Because the little guys who bust their ass deserve to be heard.</p></div>
+    </div>
+    <p style="font-size:28px;color:#c0392b;margin-bottom:48px">That's the revolution.<br>Join it. ✊</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <button class="btn" onclick="show('renegade')">Become a Renegade →</button>
+      <button class="btn-ghost" onclick="show('filmmaker')">I Have a Film</button>
+    </div>
+  </div>
+</div>
+
+<!-- FUND PAGE -->
+
+<div id="fund" style="display:none">
+  <div class="page-narrow">
+    <span class="scene-tag">SCENE 07 / THE REVOLUTION FUND</span>
+    <span class="tag">Renegades Backing Renegades</span>
+    <h2 style="margin-bottom:24px">Put your money<br><em class="red">where the art is.</em></h2>
+    <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.65);margin-bottom:16px">This is not a transaction. Nobody is asking you for anything. The Revolution Fund exists because some Renegades want to put something back into the movement that gave them great cinema.</p>
+    <p style="font-size:17px;line-height:1.9;color:rgba(240,235,224,0.65);margin-bottom:48px">Every dollar goes directly to the cause you choose. No admin fees. No corporate overhead. Renegades backing Renegades.</p>
+    <div class="divider"></div>
+    <div id="fund-success" style="display:none;text-align:center;padding:64px 0">
+      <div style="font-size:48px;margin-bottom:24px">&#x1F3AC;</div>
+      <h3 style="font-size:40px;margin-bottom:16px">Thank you, Renegade.</h3>
+      <p style="font-size:16px;color:rgba(240,235,224,0.5);line-height:1.7">Your contribution to the revolution means everything.</p>
+      <p style="font-size:18px;color:#c0392b;letter-spacing:0.2em;text-transform:uppercase;margin-top:24px">Lights. Camera. Action.</p>
+    </div>
+    <div id="fund-form">
+      <p style="font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(240,235,224,0.35);margin-bottom:24px">Choose where your contribution goes</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:40px">
+        <div id="fund-opt-film" onclick="selectFund(this)" style="border:2px solid rgba(240,235,224,0.08);padding:24px;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+          <div><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span style="font-size:20px">&#x1F3AC;</span><span style="font-size:18px;font-family:'Bebas Neue',serif;letter-spacing:0.05em">Film It</span></div><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Help a filmmaker finish their film. Post-production, sound mixing, colour grading — the final miles that make the difference.</p></div>
+          <div class="fund-check"></div>
+        </div>
+        <div id="fund-opt-tour" onclick="selectFund(this)" style="border:2px solid rgba(240,235,224,0.08);padding:24px;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+          <div><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span style="font-size:20px">&#x1F68C;</span><span style="font-size:18px;font-family:'Bebas Neue',serif;letter-spacing:0.05em">Tour It</span></div><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Fund a filmmaker's travel budget. Flights, fuel, accommodation — getting the film and the person who made it into your town.</p></div>
+          <div class="fund-check"></div>
+        </div>
+        <div id="fund-opt-screen" onclick="selectFund(this)" style="border:2px solid rgba(240,235,224,0.08);padding:24px;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+          <div><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span style="font-size:20px">&#x1F39F;</span><span style="font-size:18px;font-family:'Bebas Neue',serif;letter-spacing:0.05em">Screen It</span></div><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Subsidise ticket prices so nobody misses a film because they cannot afford it. Every Renegade deserves a seat in the dark.</p></div>
+          <div class="fund-check"></div>
+        </div>
+        <div id="fund-opt-build" onclick="selectFund(this)" style="border:2px solid rgba(240,235,224,0.08);padding:24px;cursor:pointer;transition:all 0.2s;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+          <div><div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><span style="font-size:20px">&#x26A1;</span><span style="font-size:18px;font-family:'Bebas Neue',serif;letter-spacing:0.05em">Build It</span></div><p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5)">Help grow Indie Revolutions so more towns, more films, and more Renegades can find each other.</p></div>
+          <div class="fund-check"></div>
+        </div>
+      </div>
+      <div class="field"><label>Your contribution — any amount</label><input id="fund-amount" type="number" min="1" placeholder="Enter any amount"/></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px">
+        <button onclick="setAmount(10)" style="padding:8px 16px;font-size:12px;background:transparent;border:1px solid rgba(240,235,224,0.12);color:rgba(240,235,224,0.45);cursor:pointer;font-family:inherit">$10</button>
+        <button onclick="setAmount(25)" style="padding:8px 16px;font-size:12px;background:transparent;border:1px solid rgba(240,235,224,0.12);color:rgba(240,235,224,0.45);cursor:pointer;font-family:inherit">$25</button>
+        <button onclick="setAmount(50)" style="padding:8px 16px;font-size:12px;background:transparent;border:1px solid rgba(240,235,224,0.12);color:rgba(240,235,224,0.45);cursor:pointer;font-family:inherit">$50</button>
+        <button onclick="setAmount(100)" style="padding:8px 16px;font-size:12px;background:transparent;border:1px solid rgba(240,235,224,0.12);color:rgba(240,235,224,0.45);cursor:pointer;font-family:inherit">$100</button>
+        <button onclick="setAmount(250)" style="padding:8px 16px;font-size:12px;background:transparent;border:1px solid rgba(240,235,224,0.12);color:rgba(240,235,224,0.45);cursor:pointer;font-family:inherit">$250</button>
+        <button onclick="setAmount(500)" style="padding:8px 16px;font-size:12px;background:transparent;border:1px solid rgba(240,235,224,0.12);color:rgba(240,235,224,0.45);cursor:pointer;font-family:inherit">$500</button>
+      </div>
+      <div class="field"><label>Your Name (optional)</label><input id="fund-name" type="text" placeholder="Anonymous is fine"/></div>
+      <div class="field"><label>Your Email (optional)</label><input id="fund-email" type="email"/></div>
+      <div class="field"><label>A message for the movement (optional)</label><textarea id="fund-message" rows="3" placeholder="Why do you believe in this?"></textarea></div>
+      <div style="background:rgba(192,57,43,0.04);border:1px solid rgba(192,57,43,0.12);padding:20px;margin-bottom:28px">
+        <p style="font-size:13px;line-height:1.8;color:rgba(240,235,224,0.4)">&#x1F3AC; Secure payment via Stripe coming soon. Register your intention now and we will contact you directly to complete your contribution.</p>
+      </div>
+      <div id="fund-error" style="display:none;color:#c0392b;font-size:13px;margin-bottom:16px"></div>
+      <div style="display:flex;gap:12px">
+        <button class="btn-ghost" onclick="show('home')">Back</button>
+        <button class="btn" onclick="submitFund()" style="flex:1">Back the Revolution &#x270A;</button>
+      </div>
+      <p style="font-size:11px;color:rgba(240,235,224,0.18);margin-top:24px;line-height:1.7">Voluntary contribution. No goods or services provided in exchange.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ SUCCESS ═══════════════════ -->
+
+<div id="success" style="display:none;max-width:560px;margin:0 auto;padding:120px 48px;text-align:center">
+  <div style="font-size:56px;margin-bottom:32px">✊</div>
+  <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.3);padding:20px;margin-bottom:32px">
+    <p style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#c0392b;margin-bottom:8px">🏆 You're a Founding Renegade</p>
+    <p style="font-size:14px;color:rgba(240,235,224,0.6)">Your Founding Trophy is reserved. It will never be made again.</p>
+  </div>
+  <span class="tag">Welcome, Renegade</span>
+  <h2 style="font-size:40px;margin-bottom:24px">You're a Renegade now.</h2>
+  <p style="font-size:16px;line-height:1.8;color:rgba(240,235,224,0.55);margin-bottom:16px">The moment an indie film is heading to your town, you'll be the first to know.</p>
+  <p style="font-size:18px;color:#c0392b;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:48px">Lights. Camera. Action.</p>
+  <button class="btn-ghost" onclick="show('home')">← Back to Indie Revolutions</button>
+</div>
+
+<script>
+// ── SUPABASE ──
+var SUPABASE_URL = 'https://zlexkdoimslgphboqgjr.supabase.co';
+var SUPABASE_KEY = 'sb_publishable_jALrcpM9MAgRD6ErRrD-nw_G2omnHd1';
+
+function saveToSupabase(table, data) {
+  fetch(SUPABASE_URL + '/rest/v1/' + table, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify(data)
+  }).catch(function(e) { console.log('Save error:', e); });
+}
+
+function getCount(table, callback) {
+  fetch(SUPABASE_URL + '/rest/v1/' + table + '?select=id', {
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Prefer': 'count=exact',
+      'Range': '0-0'
+    }
+  }).then(function(r) {
+    var count = r.headers.get('content-range');
+    if(count) { var n = parseInt(count.split('/')[1]); if(!isNaN(n)) callback(n); }
+  }).catch(function(e) { console.log('Count error:', e); });
+}
+
+// ── DATA ──
+var spotsLeft = 153;
+var oathTaken = false;
+var selectedGenres = [];
+
+var GENRES = ['Action','Drama','Documentary','Experimental','Foreign Language','Animation','Horror','Comedy','Sci-Fi','Romance','Thriller'];
+
+var filmsData = [
+  {title:'Tangerine',director:'Sean Baker',year:'2015',genre:'Drama',synopsis:'Shot entirely on iPhone 5S, two trans sex workers tear through Los Angeles on Christmas Eve.',towns:'Austin TX, Portland OR, Brooklyn NY',status:'touring'},
+  {title:'Beasts of the Southern Wild',director:'Benh Zeitlin',year:'2012',genre:'Drama',synopsis:'A six-year-old girl faces rising floodwaters and her ailing father in a bayou community.',towns:'New Orleans LA, Nashville TN, Atlanta GA',status:'touring'},
+  {title:'Moonlight',director:'Barry Jenkins',year:'2016',genre:'Drama',synopsis:'A young Black man grapples with his identity and sexuality across three defining chapters of his life.',towns:'Brooklyn NY, Chicago IL, Detroit MI',status:'touring'},
+  {title:'Searching for Sugar Man',director:'Malik Bendjelloul',year:'2012',genre:'Documentary',synopsis:'The story of Rodriguez, a musician who became a massive star in South Africa without knowing it.',towns:'Denver CO, Seattle WA, Austin TX',status:'touring'},
+  {title:'The Fits',director:'Anna Rose Holmer',year:'2015',genre:'Drama',synopsis:'An 11-year-old tomboy finds herself drawn to a competitive dance team in Cincinnati.',towns:'Philadelphia PA, Baltimore MD, Boston MA',status:'touring'},
+  {title:'Wendy and Lucy',director:'Kelly Reichardt',year:'2008',genre:'Drama',synopsis:'A young woman and her dog become stranded in a small Oregon town.',towns:'Portland OR, Seattle WA, Boise ID',status:'touring'},
+];
+
+var nightsData = [
+  {film:'Tangerine',director:'Sean Baker',year:'2015',name:'Marcus T.',town:'Austin, TX',moment:'We stayed in the parking lot talking for two hours after. Nobody wanted the night to end.'},
+  {film:'Moonlight',director:'Barry Jenkins',year:'2016',name:'Simone A.',town:'Brooklyn, NY',moment:'Someone started a conversation about their own life halfway through. We let them talk. The film waited.'},
+  {film:'Beasts of the Southern Wild',director:'Benh Zeitlin',year:'2012',name:'Carla M.',town:'New Orleans, LA',moment:'The whole room went silent for the last 20 minutes. Not a single phone came out.'},
+  {film:'Searching for Sugar Man',director:'Malik Bendjelloul',year:'2012',name:'Dana K.',town:'Denver, CO',moment:'We all went home and played Rodriguez records until 2am. Changed what I thought music could do.'},
+];
+
+var venuesData = [
+  {name:'The Paramount Underground',town:'Austin, TX',address:'214 W 7th St',capacity:'120',type:'Independent Theatre',note:'Owner is a huge film lover. Best popcorn in Austin. Just call ahead and ask for Danny.'},
+  {name:'Corktown Tavern Back Room',town:'Detroit, MI',address:'1 Michigan Ave',capacity:'60',type:'Bar with Screen',note:"They've done pop-ups before. Owner gives filmmakers free beer after the show."},
+  {name:"St. Anthony's Community Hall",town:'New Orleans, LA',address:'833 Lower Line St',capacity:'200',type:'Community Hall',note:'Available most weekends. Staff are incredibly welcoming to filmmakers.'},
+  {name:'The Warehouse on Pearl',town:'Denver, CO',address:'Pearl St & 28th',capacity:'150',type:'Warehouse',note:'Raw space but perfect atmosphere. Owner treats every screening like an event.'},
+];
+
+var townsData = [
+  {city:'Brooklyn, NY',count:3890,trending:true},
+  {city:'Portland, OR',count:2103,trending:false},
+  {city:'Austin, TX',count:1842,trending:true},
+  {city:'Denver, CO',count:1201,trending:false},
+  {city:'New Orleans, LA',count:988,trending:false},
+  {city:'Asheville, NC',count:674,trending:true},
+  {city:'Nashville, TN',count:543,trending:true},
+  {city:'Seattle, WA',count:487,trending:false},
+  {city:'Philadelphia, PA',count:432,trending:false},
+  {city:'Detroit, MI',count:398,trending:true},
+];
+
+var faqData = [
+  {q:'What is Indie Revolutions?',a:'Indie Revolutions is a self-distribution platform connecting independent filmmakers with film lovers — Renegades — in every American town. We match films with venues and audiences so filmmakers can tour their work without needing a studio or distributor.'},
+  {q:'Is it free to sign up as a Renegade?',a:'Yes. Signing up as a Renegade is completely free. You register your town, your taste, and the venues you know. When a film comes to your area, you get notified first.'},
+  {q:'What is the Founding Trophy?',a:'The first 500 Renegades to join receive a physical Indie Revolutions Founding Trophy — cast with the original founding logo. After 500, the mold is destroyed and they will never be made again. It is proof you were here at the beginning.'},
+  {q:'How does a filmmaker list their film?',a:"Filmmakers register their film, a one-line synopsis, and the towns they can physically reach. We match them with Renegades and venues already in those towns. The filmmaker controls their rights, their screening fees, and their schedule. Always."},
+  {q:'Does Indie Revolutions take a cut?',a:'Details of filmmaker payouts are being finalised for launch. Our commitment is that the vast majority of every ticket goes directly to the filmmaker. We will never take the 90% cut that traditional distributors take.'},
+  {q:'What towns are you in?',a:'We have Renegades registered in over 1,200 towns across all 50 states. The movement started in cities like Brooklyn, Portland, Austin, and New Orleans — but we have Renegades in small towns across rural America too. That is the whole point.'},
+  {q:'I own a venue. How do I get involved?',a:'Submit your venue through the Venues page. Tell us your capacity, your vibe, and what makes it special. Filmmakers on tour will find you directly.'},
+  {q:'Is this just for film?',a:'Film is Phase 1. Music is next. Then art, theatre, comedy, and beyond. The gatekeepers do not just control cinema — they control all culture. We are taking it all back, phase by phase.'},
+];
+
+// ── NAVIGATION ──
+function show(page) {
+  var pages = ['home','films','heatmap','renegade','filmmaker','nights','venues','involved','faq','press','code','manifesto','fund','success'];
+  pages.forEach(function(p){
+    var el = document.getElementById(p);
+    if(el) el.style.display = (p === page) ? 'block' : 'none';
+  });
+  if(page==='nights') renderNights();
+  if(page==='venues') renderVenues();
+  if(page==='films') renderFilms();
+  if(page==='heatmap') renderHeatmap();
+  if(page==='faq') renderFaq();
+  if(page==='renegade') renderGenres();
+  window.scrollTo(0,0);
+}
+
+// ── OATH ──
+function takeOath() {
+  oathTaken = true;
+  var ob = document.getElementById('oath');
+  ob.classList.add('taken');
+  document.getElementById('oath-btn').textContent = '✊ I Am a Renegade';
+  document.getElementById('oath-btn').style.background = '#c0392b';
+  document.getElementById('oath-btn').style.color = '#f0ebe0';
+  var jb = document.getElementById('join-btn');
+  jb.style.opacity = '1';
+  jb.textContent = 'Join the Revolution →';
+}
+
+// ── GENRES ──
+function renderGenres() {
+  var container = document.getElementById('genre-pills');
+  if(!container) return;
+  container.innerHTML = '';
+  GENRES.forEach(function(g){
+    var btn = document.createElement('button');
+    btn.className = 'genre-btn' + (selectedGenres.indexOf(g) > -1 ? ' selected' : '');
+    btn.textContent = g;
+    btn.onclick = function(){ toggleGenre(g); };
+    container.appendChild(btn);
+  });
+}
+
+function toggleGenre(g) {
+  var idx = selectedGenres.indexOf(g);
+  if(idx > -1) { selectedGenres.splice(idx,1); }
+  else if(selectedGenres.length < 3) { selectedGenres.push(g); }
+  renderGenres();
+}
+
+// ── JOIN ──
+function joinRevolution() {
+  if(!oathTaken) return;
+  var name = document.getElementById('r-name').value;
+  var email = document.getElementById('r-email').value;
+  var city = document.getElementById('r-city').value;
+  var film = document.getElementById('r-film').value;
+  var hp = document.getElementById('honeypot').value;
+  if(!name || !email || !city || !film || hp) return;
+  joinRevolutionSupabase(name, email, city, document.getElementById('r-state').value, selectedGenres.join(', '));
+  if(spotsLeft > 0) {
+    spotsLeft--;
+    var sh = document.getElementById('spots-home');
+    var sf = document.getElementById('spots-form');
+    if(sh) sh.textContent = spotsLeft;
+    if(sf) sf.textContent = spotsLeft;
+  }
+  show('success');
+}
+
+// ── FILMMAKER ──
+function filmSubmit() {
+  var name = document.getElementById('f-name').value;
+  var email = document.getElementById('f-email').value;
+  var film = document.getElementById('f-film').value;
+  if(!name || !email || !film) return;
+  filmSubmitSupabase(name, email, film, document.getElementById('f-year').value, document.getElementById('f-genre').value, document.getElementById('f-synopsis').value, document.getElementById('f-towns').value, document.getElementById('f-budget').value);
+  var newFilm = {
+    title: film,
+    director: name,
+    year: document.getElementById('f-year').value || '2024',
+    genre: document.getElementById('f-genre').value || 'Drama',
+    synopsis: document.getElementById('f-synopsis').value || 'An independent film.',
+    towns: document.getElementById('f-towns').value || 'Coming soon',
+    status: 'touring'
+  };
+  filmsData.unshift(newFilm);
+  show('success');
+}
+
+// ── NIGHTS ──
+function toggleForm(id) {
+  var f = document.getElementById(id);
+  f.style.display = f.style.display === 'none' ? 'block' : 'none';
+}
+
+function addNight() {
+  var film = document.getElementById('n-film').value;
+  var moment = document.getElementById('n-moment').value;
+  if(!film || !moment) return;
+  nightsData.unshift({
+    film: film,
+    director: document.getElementById('n-director').value,
+    year: document.getElementById('n-year').value,
+    name: document.getElementById('n-name').value || 'Anonymous Renegade',
+    town: document.getElementById('n-town').value || 'Somewhere in America',
+    moment: moment
+  });
+  document.getElementById('night-form').style.display = 'none';
+  renderNights();
+}
+
+function renderNights() {
+  var html = '';
+  nightsData.forEach(function(n){
+    html += '<div class="card">';
+    html += '<h3 style="margin-bottom:4px">'+n.film+'</h3>';
+    var meta = [];
+    if(n.director) meta.push('dir. '+n.director);
+    if(n.year) meta.push(n.year);
+    if(meta.length) html += '<p style="font-size:12px;color:rgba(240,235,224,0.35);margin-bottom:16px">'+meta.join(' · ')+'</p>';
+    html += '<p style="font-size:17px;line-height:1.8;font-style:italic;margin-bottom:16px">"'+n.moment+'"</p>';
+    html += '<p style="font-size:11px;color:rgba(240,235,224,0.3)">'+n.name+' · '+n.town+'</p>';
+    html += '</div>';
+  });
+  document.getElementById('nights-list').innerHTML = html;
+}
+
+// ── VENUES ──
+function addVenue() {
+  var name = document.getElementById('v-name').value;
+  var town = document.getElementById('v-town').value;
+  if(!name || !town) return;
+  venuesData.unshift({
+    name: name, town: town,
+    address: document.getElementById('v-address').value,
+    capacity: document.getElementById('v-capacity').value,
+    type: document.getElementById('v-type').value,
+    note: document.getElementById('v-note').value
+  });
+  document.getElementById('venue-form').style.display = 'none';
+  renderVenues();
+}
+
+function renderVenues() {
+  var html = '';
+  venuesData.forEach(function(v){
+    html += '<div class="card">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px">';
+    html += '<div><h3 style="margin-bottom:4px">'+v.name+'</h3>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">📍 '+v.town+(v.address?' · '+v.address:'')+'</p></div>';
+    html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+    if(v.type) html += '<span class="badge">'+v.type+'</span>';
+    if(v.capacity) html += '<span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.35);border:1px solid rgba(240,235,224,0.1);padding:4px 10px">~'+v.capacity+' seats</span>';
+    html += '</div></div>';
+    if(v.note) html += '<p style="font-size:14px;line-height:1.7;font-style:italic;color:rgba(240,235,224,0.55)">"'+v.note+'"</p>';
+    html += '</div>';
+  });
+  document.getElementById('venues-list').innerHTML = html;
+}
+
+// ── FILMS ──
+function renderFilms() {
+  var html = '';
+  filmsData.forEach(function(f){
+    html += '<div class="film-card">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:12px">';
+    html += '<div><h3 style="margin-bottom:4px">'+f.title+'</h3>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">dir. '+f.director+' · '+f.year+' · '+f.genre+'</p></div>';
+    html += '<span class="badge" style="background:rgba(192,57,43,0.1)">On Tour</span>';
+    html += '</div>';
+    html += '<p style="font-size:15px;line-height:1.7;color:rgba(240,235,224,0.6);margin-bottom:16px">'+f.synopsis+'</p>';
+    html += '<p style="font-size:12px;color:rgba(240,235,224,0.35)">📍 Touring: '+f.towns+'</p>';
+    html += '</div>';
+  });
+  document.getElementById('films-list').innerHTML = html;
+}
+
+// ── HEATMAP ──
+function renderHeatmap() {
+  var html = '';
+  townsData.forEach(function(t,i){
+    html += '<div class="map-town">';
+    html += '<div><span class="town-dot"></span><span style="font-size:14px">'+t.city+'</span>';
+    if(t.trending) html += '<span style="margin-left:8px;font-size:10px;letter-spacing:0.15em;color:#c0392b;text-transform:uppercase">↑ rising</span>';
+    html += '</div>';
+    html += '<span style="font-size:13px;color:rgba(240,235,224,0.4)">'+t.count.toLocaleString()+'</span>';
+    html += '</div>';
+  });
+  document.getElementById('heatmap-towns').innerHTML = html;
+}
+
+// ── FAQ ──
+function renderFaq() {
+  var html = '';
+  faqData.forEach(function(f,i){
+    html += '<div class="faq-item" onclick="toggleFaq('+i+')">';
+    html += '<div class="faq-q"><span>'+f.q+'</span><span id="faq-arrow-'+i+'" style="color:#c0392b;font-size:20px">+</span></div>';
+    html += '<div class="faq-a" id="faq-a-'+i+'">'+f.a+'</div>';
+    html += '</div>';
+  });
+  document.getElementById('faq-list').innerHTML = html;
+}
+
+function toggleFaq(i) {
+  var a = document.getElementById('faq-a-'+i);
+  var arrow = document.getElementById('faq-arrow-'+i);
+  if(a.style.display === 'block') {
+    a.style.display = 'none';
+    arrow.textContent = '+';
+  } else {
+    a.style.display = 'block';
+    arrow.textContent = '−';
+  }
+}
+
+// ── GET INVOLVED ──
+function involvedSubmit() {
+  var name = document.getElementById('inv-name').value;
+  var email = document.getElementById('inv-email').value;
+  var skill = document.getElementById('inv-skill').value;
+  var idea = document.getElementById('inv-idea').value;
+  var film = document.getElementById('inv-film').value;
+  var hp = document.getElementById('inv-honeypot').value;
+  if(!name || !email || !skill || !idea || !film || hp) return;
+  document.getElementById('involved-form').style.display = 'none';
+  document.getElementById('involved-success').style.display = 'block';
+}
+
+
+// ── FUND ──
+var selectedFundEl = null;
+
+function selectFund(el) {
+  if(selectedFundEl) {
+    selectedFundEl.style.borderColor = 'rgba(240,235,224,0.08)';
+    selectedFundEl.style.background = 'transparent';
+    var pc = selectedFundEl.querySelector('.fund-check');
+    if(pc) { pc.style.background = 'transparent'; pc.style.borderColor = 'rgba(240,235,224,0.2)'; }
+  }
+  selectedFundEl = el;
+  el.style.borderColor = '#c0392b';
+  el.style.background = 'rgba(192,57,43,0.06)';
+  var c = el.querySelector('.fund-check');
+  if(c) { c.style.background = '#c0392b'; c.style.borderColor = '#c0392b'; }
+}
+
+function setAmount(n) {
+  var el = document.getElementById('fund-amount');
+  if(el) el.value = n;
+}
+
+function submitFund() {
+  var err = document.getElementById('fund-error');
+  if(!selectedFundEl) {
+    if(err) { err.style.display = 'block'; err.textContent = 'Please choose a fund.'; }
+    return;
+  }
+  var amountEl = document.getElementById('fund-amount');
+  if(!amountEl || !amountEl.value || amountEl.value < 1) {
+    if(err) { err.style.display = 'block'; err.textContent = 'Please enter an amount.'; }
+    return;
+  }
+  if(err) err.style.display = 'none';
+  var form = document.getElementById('fund-form');
+  var success = document.getElementById('fund-success');
+  if(form) form.style.display = 'none';
+  if(success) success.style.display = 'block';
+}
+
+// ── SUPABASE SAVES ──
+function joinRevolutionSupabase(name, email, city, state, genres) {
+  saveToSupabase('renegades', { name: name, email: email, city: city, state: state, genres: genres });
+}
+
+function filmSubmitSupabase(name, email, film, year, genre, synopsis, towns, budget) {
+  saveToSupabase('filmmakers', { name: name, email: email, film: film, year: year, genre: genre, synopsis: synopsis, towns: towns, budget: budget });
+}
+
+
+// ── VHS INTRO ──
+var vhsSeconds = 0;
+var vhsTimer = setInterval(function() {
+  vhsSeconds++;
+  var h = Math.floor(vhsSeconds/3600);
+  var m = Math.floor((vhsSeconds%3600)/60);
+  var s = vhsSeconds%60;
+  var counter = document.getElementById('vhs-counter');
+  if(counter) counter.textContent = 'SP \u25CF ' + 
+    String(h).padStart(2,'0') + ':' + 
+    String(m).padStart(2,'0') + ':' + 
+    String(s).padStart(2,'0');
+}, 1000);
+
+function enterSite() {
+  clearInterval(vhsTimer);
+  var intro = document.getElementById('vhs-intro');
+  if(intro) {
+    intro.classList.add('fade-out');
+    setTimeout(function() {
+      intro.style.display = 'none';
+    }, 800);
+  }
+}
+
+// ── INIT ──
+renderNights();
+renderVenues();
+getCount('renegades', function(count) {
+  var remaining = Math.max(0, 500 - count);
+  spotsLeft = remaining;
+  var sh = document.getElementById('spots-home');
+  var sf = document.getElementById('spots-form');
+  var sr = document.getElementById('stat-renegades');
+  if(sh) sh.textContent = remaining;
+  if(sf) sf.textContent = remaining;
+  if(sr) sr.textContent = count;
+});
+</script>
+
+</body>
+</html>
