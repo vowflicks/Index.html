@@ -589,7 +589,7 @@ var spotsLeft = 500;
 var oathTaken = false;
 var selectedGenres = [];
 
-var GENRES = [‘Action’,‘Drama’,‘Documentary’,‘Experimental’,‘Foreign Language’,‘Animation’,‘Horror’,‘Comedy’,‘Sci-Fi’,‘Romance’,‘Thriller’];
+var GENRES = ['Action','Drama','Documentary','Experimental','Foreign Language','Animation','Horror','Comedy','Sci-Fi','Romance','Thriller'];
 
 var filmsData = [];
 
@@ -600,57 +600,57 @@ var venuesData = [];
 var townsData = [];
 
 var faqData = [
-{q:‘What is Indie Revolutions?’,a:‘Indie Revolutions is a self-distribution platform connecting independent filmmakers with film lovers — Renegades — in every American town. We match films with venues and audiences so filmmakers can tour their work without needing a studio or distributor.’},
-{q:‘Is it free to sign up as a Renegade?’,a:‘Yes. Signing up as a Renegade is completely free. You register your town, your taste, and the venues you know. When a film comes to your area, you get notified first.’},
-{q:‘What is the Founding Trophy?’,a:‘The first 500 Renegades to join receive a physical Indie Revolutions Founding Trophy — cast with the original founding logo. After 500, the mold is destroyed and they will never be made again. It is proof you were here at the beginning.’},
-{q:‘How does a filmmaker list their film?’,a:“Filmmakers register their film, a one-line synopsis, and the towns they can physically reach. We match them with Renegades and venues already in those towns. The filmmaker controls their rights, their screening fees, and their schedule. Always.”},
-{q:‘Does Indie Revolutions take a cut?’,a:‘Details of filmmaker payouts are being finalised for launch. Our commitment is that the vast majority of every ticket goes directly to the filmmaker. We will never take the 90% cut that traditional distributors take.’},
-{q:‘What towns are you in?’,a:‘We have Renegades registered in over 1,200 towns across all 50 states. The movement started in cities like Brooklyn, Portland, Austin, and New Orleans — but we have Renegades in small towns across rural America too. That is the whole point.’},
-{q:‘I own a venue. How do I get involved?’,a:‘Submit your venue through the Venues page. Tell us your capacity, your vibe, and what makes it special. Filmmakers on tour will find you directly.’},
-{q:‘Is this just for film?’,a:‘Film is Phase 1. Music is next. Then art, theatre, comedy, and beyond. The gatekeepers do not just control cinema — they control all culture. We are taking it all back, phase by phase.’},
+{q:'What is Indie Revolutions?',a:'Indie Revolutions is a self-distribution platform connecting independent filmmakers with film lovers — Renegades — in every American town. We match films with venues and audiences so filmmakers can tour their work without needing a studio or distributor.'},
+{q:'Is it free to sign up as a Renegade?',a:'Yes. Signing up as a Renegade is completely free. You register your town, your taste, and the venues you know. When a film comes to your area, you get notified first.'},
+{q:'What is the Founding Trophy?',a:'The first 500 Renegades to join receive a physical Indie Revolutions Founding Trophy — cast with the original founding logo. After 500, the mold is destroyed and they will never be made again. It is proof you were here at the beginning.'},
+{q:'How does a filmmaker list their film?',a:"Filmmakers register their film, a one-line synopsis, and the towns they can physically reach. We match them with Renegades and venues already in those towns. The filmmaker controls their rights, their screening fees, and their schedule. Always."},
+{q:'Does Indie Revolutions take a cut?',a:'Details of filmmaker payouts are being finalised for launch. Our commitment is that the vast majority of every ticket goes directly to the filmmaker. We will never take the 90% cut that traditional distributors take.'},
+{q:'What towns are you in?',a:'We have Renegades registered in over 1,200 towns across all 50 states. The movement started in cities like Brooklyn, Portland, Austin, and New Orleans — but we have Renegades in small towns across rural America too. That is the whole point.'},
+{q:'I own a venue. How do I get involved?',a:'Submit your venue through the Venues page. Tell us your capacity, your vibe, and what makes it special. Filmmakers on tour will find you directly.'},
+{q:'Is this just for film?',a:'Film is Phase 1. Music is next. Then art, theatre, comedy, and beyond. The gatekeepers do not just control cinema — they control all culture. We are taking it all back, phase by phase.'},
 ];
 
 // ── NAVIGATION ──
 function show(page) {
 try {
-var pages = [‘home’,‘films’,‘heatmap’,‘renegade’,‘filmmaker’,‘nights’,‘venues’,‘involved’,‘faq’,‘press’,‘code’,‘manifesto’,‘fund’,‘success’];
+var pages = ['home','films','heatmap','renegade','filmmaker','nights','venues','involved','faq','press','code','manifesto','fund','success'];
 pages.forEach(function(p){
 var el = document.getElementById(p);
-if(el) el.style.display = (p === page) ? ‘block’ : ‘none’;
+if(el) el.style.display = (p === page) ? 'block' : 'none';
 });
-if(page===‘nights’) renderNights();
-if(page===‘venues’) renderVenues();
-if(page===‘films’) renderFilms();
-if(page===‘heatmap’) renderHeatmap();
-if(page===‘faq’) renderFaq();
-if(page===‘renegade’) renderGenres();
+if(page==='nights') renderNights();
+if(page==='venues') renderVenues();
+if(page==='films') renderFilms();
+if(page==='heatmap') renderHeatmap();
+if(page==='faq') renderFaq();
+if(page==='renegade') renderGenres();
 window.scrollTo(0,0);
 } catch(e) {
-console.log(‘Navigation error:’, e);
+console.log('Navigation error:', e);
 }
 }
 
 // ── OATH ──
 function takeOath() {
 oathTaken = true;
-var ob = document.getElementById(‘oath’);
-ob.classList.add(‘taken’);
-document.getElementById(‘oath-btn’).textContent = ‘✊ I Am a Renegade’;
-document.getElementById(‘oath-btn’).style.background = ‘#c0392b’;
-document.getElementById(‘oath-btn’).style.color = ‘#f0ebe0’;
-var jb = document.getElementById(‘join-btn’);
-jb.style.opacity = ‘1’;
-jb.textContent = ‘Join the Revolution →’;
+var ob = document.getElementById('oath');
+ob.classList.add('taken');
+document.getElementById('oath-btn').textContent = '✊ I Am a Renegade';
+document.getElementById('oath-btn').style.background = '#c0392b';
+document.getElementById('oath-btn').style.color = '#f0ebe0';
+var jb = document.getElementById('join-btn');
+jb.style.opacity = '1';
+jb.textContent = 'Join the Revolution →';
 }
 
 // ── GENRES ──
 function renderGenres() {
-var container = document.getElementById(‘genre-pills’);
+var container = document.getElementById('genre-pills');
 if(!container) return;
-container.innerHTML = ‘’;
+container.innerHTML = '';
 GENRES.forEach(function(g){
-var btn = document.createElement(‘button’);
-btn.className = ‘genre-btn’ + (selectedGenres.indexOf(g) > -1 ? ’ selected’ : ‘’);
+var btn = document.createElement('button');
+btn.className = 'genre-btn' + (selectedGenres.indexOf(g) > -1 ? ' selected' : '');
 btn.textContent = g;
 btn.onclick = function(){ toggleGenre(g); };
 container.appendChild(btn);
@@ -667,221 +667,221 @@ renderGenres();
 // ── JOIN ──
 function joinRevolution() {
 if(!oathTaken) return;
-var name = document.getElementById(‘r-name’).value;
-var email = document.getElementById(‘r-email’).value;
-var city = document.getElementById(‘r-city’).value;
-var state = document.getElementById(‘r-state’).value;
-var film = document.getElementById(‘r-film’).value;
-var hp = document.getElementById(‘honeypot’).value;
+var name = document.getElementById('r-name').value;
+var email = document.getElementById('r-email').value;
+var city = document.getElementById('r-city').value;
+var state = document.getElementById('r-state').value;
+var film = document.getElementById('r-film').value;
+var hp = document.getElementById('honeypot').value;
 if(hp) return;
-if(!name || !email || !city || !state || !film) { alert(‘Please fill in all fields and take the oath.’); return; }
+if(!name || !email || !city || !state || !film) { alert('Please fill in all fields and take the oath.'); return; }
 if(spotsLeft > 0) { spotsLeft--; }
-var sh = document.getElementById(‘spots-home’);
-var sf = document.getElementById(‘spots-form’);
+var sh = document.getElementById('spots-home');
+var sf = document.getElementById('spots-form');
 if(sh) sh.textContent = spotsLeft;
 if(sf) sf.textContent = spotsLeft;
-show(‘success’);
+show('success');
 }
 
 // ── FILM SUBMIT ──
 function filmSubmit() {
-var name = document.getElementById(‘f-name’).value;
-var email = document.getElementById(‘f-email’).value;
-var film = document.getElementById(‘f-film’).value;
-if(!name || !email || !film) { alert(‘Please fill in your name, email, and film title.’); return; }
-alert(‘Thank you! Your film has been registered. We will be in touch.’);
-show(‘home’);
+var name = document.getElementById('f-name').value;
+var email = document.getElementById('f-email').value;
+var film = document.getElementById('f-film').value;
+if(!name || !email || !film) { alert('Please fill in your name, email, and film title.'); return; }
+alert('Thank you! Your film has been registered. We will be in touch.');
+show('home');
 }
 
 // ── TOGGLE FORM ──
 function toggleForm(id) {
 var el = document.getElementById(id);
 if(!el) return;
-el.style.display = el.style.display === ‘none’ ? ‘block’ : ‘none’;
+el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
 
 // ── ADD NIGHT ──
 function addNight() {
-var film = document.getElementById(‘n-film’).value;
-var director = document.getElementById(‘n-director’).value;
-var year = document.getElementById(‘n-year’).value;
-var name = document.getElementById(‘n-name’).value;
-var town = document.getElementById(‘n-town’).value;
-var moment = document.getElementById(‘n-moment’).value;
-if(!film || !name || !moment) { alert(‘Please fill in the film title, your name, and the memory.’); return; }
+var film = document.getElementById('n-film').value;
+var director = document.getElementById('n-director').value;
+var year = document.getElementById('n-year').value;
+var name = document.getElementById('n-name').value;
+var town = document.getElementById('n-town').value;
+var moment = document.getElementById('n-moment').value;
+if(!film || !name || !moment) { alert('Please fill in the film title, your name, and the memory.'); return; }
 nightsData.push({film:film, director:director, year:year, name:name, town:town, moment:moment});
-document.getElementById(‘n-film’).value = ‘’;
-document.getElementById(‘n-director’).value = ‘’;
-document.getElementById(‘n-year’).value = ‘’;
-document.getElementById(‘n-name’).value = ‘’;
-document.getElementById(‘n-town’).value = ‘’;
-document.getElementById(‘n-moment’).value = ‘’;
-toggleForm(‘night-form’);
+document.getElementById('n-film').value = '';
+document.getElementById('n-director').value = '';
+document.getElementById('n-year').value = '';
+document.getElementById('n-name').value = '';
+document.getElementById('n-town').value = '';
+document.getElementById('n-moment').value = '';
+toggleForm('night-form');
 renderNights();
 }
 
 // ── ADD VENUE ──
 function addVenue() {
-var name = document.getElementById(‘v-name’).value;
-var town = document.getElementById(‘v-town’).value;
-var address = document.getElementById(‘v-address’).value;
-var capacity = document.getElementById(‘v-capacity’).value;
-var type = document.getElementById(‘v-type’).value;
-var note = document.getElementById(‘v-note’).value;
-if(!name || !town) { alert(‘Please fill in the venue name and town.’); return; }
+var name = document.getElementById('v-name').value;
+var town = document.getElementById('v-town').value;
+var address = document.getElementById('v-address').value;
+var capacity = document.getElementById('v-capacity').value;
+var type = document.getElementById('v-type').value;
+var note = document.getElementById('v-note').value;
+if(!name || !town) { alert('Please fill in the venue name and town.'); return; }
 venuesData.push({name:name, town:town, address:address, capacity:capacity, type:type, note:note});
-document.getElementById(‘v-name’).value = ‘’;
-document.getElementById(‘v-town’).value = ‘’;
-document.getElementById(‘v-address’).value = ‘’;
-document.getElementById(‘v-capacity’).value = ‘’;
-document.getElementById(‘v-type’).value = ‘’;
-document.getElementById(‘v-note’).value = ‘’;
-toggleForm(‘venue-form’);
+document.getElementById('v-name').value = '';
+document.getElementById('v-town').value = '';
+document.getElementById('v-address').value = '';
+document.getElementById('v-capacity').value = '';
+document.getElementById('v-type').value = '';
+document.getElementById('v-note').value = '';
+toggleForm('venue-form');
 renderVenues();
 }
 
 // ── INVOLVED SUBMIT ──
 function involvedSubmit() {
-var name = document.getElementById(‘inv-name’).value;
-var email = document.getElementById(‘inv-email’).value;
-var skill = document.getElementById(‘inv-skill’).value;
-var idea = document.getElementById(‘inv-idea’).value;
-var film = document.getElementById(‘inv-film’).value;
-var hp = document.getElementById(‘inv-honeypot’).value;
+var name = document.getElementById('inv-name').value;
+var email = document.getElementById('inv-email').value;
+var skill = document.getElementById('inv-skill').value;
+var idea = document.getElementById('inv-idea').value;
+var film = document.getElementById('inv-film').value;
+var hp = document.getElementById('inv-honeypot').value;
 if(hp) return;
-if(!name || !email || !skill || !idea || !film) { alert(‘Please fill in all fields.’); return; }
-document.getElementById(‘involved-form’).style.display = ‘none’;
-document.getElementById(‘involved-success’).style.display = ‘block’;
+if(!name || !email || !skill || !idea || !film) { alert('Please fill in all fields.'); return; }
+document.getElementById('involved-form').style.display = 'none';
+document.getElementById('involved-success').style.display = 'block';
 }
 
 // ── FUND FUNCTIONS ──
-var selectedFund = ‘’;
+var selectedFund = '';
 
 function selectFund(type) {
 selectedFund = type;
-var options = [‘film’,’tour’,’screen’,’build’];
+var options = ['film','tour','screen','build'];
 options.forEach(function(opt) {
-  var el = document.getElementById(‘fund-’ + opt);
-  var check = document.getElementById(‘fund-’ + opt + ‘-check’);
+  var el = document.getElementById('fund-' + opt);
+  var check = document.getElementById('fund-' + opt + '-check');
   if(opt === type) {
-    el.style.borderColor = ‘#c0392b’;
-    el.style.background = ‘rgba(192,57,43,0.06)’;
-    check.style.borderColor = ‘#c0392b’;
-    check.style.background = ‘#c0392b’;
+    el.style.borderColor = '#c0392b';
+    el.style.background = 'rgba(192,57,43,0.06)';
+    check.style.borderColor = '#c0392b';
+    check.style.background = '#c0392b';
   } else {
-    el.style.borderColor = ‘rgba(240,235,224,0.1)’;
-    el.style.background = ‘transparent’;
-    check.style.borderColor = ‘rgba(240,235,224,0.2)’;
-    check.style.background = ‘transparent’;
+    el.style.borderColor = 'rgba(240,235,224,0.1)';
+    el.style.background = 'transparent';
+    check.style.borderColor = 'rgba(240,235,224,0.2)';
+    check.style.background = 'transparent';
   }
 });
 }
 
 function setAmount(val) {
-document.getElementById(‘fund-amount’).value = val;
+document.getElementById('fund-amount').value = val;
 }
 
 function submitFund() {
-var errEl = document.getElementById(‘fund-error’);
-errEl.style.display = ‘none’;
-if(!selectedFund) { errEl.textContent = ‘Please choose where your contribution goes.’; errEl.style.display = ‘block’; return; }
-var amount = document.getElementById(‘fund-amount’).value;
-if(!amount || amount < 1) { errEl.textContent = ‘Please enter a contribution amount.’; errEl.style.display = ‘block’; return; }
-document.getElementById(‘fund-form’).style.display = ‘none’;
-document.getElementById(‘fund-success’).style.display = ‘block’;
+var errEl = document.getElementById('fund-error');
+errEl.style.display = 'none';
+if(!selectedFund) { errEl.textContent = 'Please choose where your contribution goes.'; errEl.style.display = 'block'; return; }
+var amount = document.getElementById('fund-amount').value;
+if(!amount || amount < 1) { errEl.textContent = 'Please enter a contribution amount.'; errEl.style.display = 'block'; return; }
+document.getElementById('fund-form').style.display = 'none';
+document.getElementById('fund-success').style.display = 'block';
 }
 
 // ── RENDER FUNCTIONS ──
 function renderFilms() {
-var container = document.getElementById(‘films-list’);
+var container = document.getElementById('films-list');
 if(!container) return;
 if(filmsData.length === 0) {
-  container.innerHTML = ‘<div style="text-align:center;padding:64px 0"><p style="font-size:16px;color:rgba(240,235,224,0.4);margin-bottom:16px">No films on tour yet.</p><p style="font-size:14px;color:rgba(240,235,224,0.25)">Are you a filmmaker? Be the first to list your film.</p></div>’;
+  container.innerHTML = '<div style="text-align:center;padding:64px 0"><p style="font-size:16px;color:rgba(240,235,224,0.4);margin-bottom:16px">No films on tour yet.</p><p style="font-size:14px;color:rgba(240,235,224,0.25)">Are you a filmmaker? Be the first to list your film.</p></div>';
   return;
 }
-var html = ‘’;
+var html = '';
 filmsData.forEach(function(f) {
-  html += ‘<div class="film-card"><h3 style="margin-bottom:8px">’ + f.title + ‘</h3><p style="font-size:13px;color:rgba(240,235,224,0.4)">’ + f.genre + ‘ &middot; ‘ + f.year + ‘</p><p style="font-size:15px;line-height:1.7;color:rgba(240,235,224,0.6);margin-top:12px">’ + f.synopsis + ‘</p></div>’;
+  html += '<div class="film-card"><h3 style="margin-bottom:8px">' + f.title + '</h3><p style="font-size:13px;color:rgba(240,235,224,0.4)">' + f.genre + ' &middot; ' + f.year + '</p><p style="font-size:15px;line-height:1.7;color:rgba(240,235,224,0.6);margin-top:12px">' + f.synopsis + '</p></div>';
 });
 container.innerHTML = html;
 }
 
 function renderNights() {
-var container = document.getElementById(‘nights-list’);
+var container = document.getElementById('nights-list');
 if(!container) return;
 if(nightsData.length === 0) {
-  container.innerHTML = ‘<div style="text-align:center;padding:64px 0"><p style="font-size:16px;color:rgba(240,235,224,0.4);margin-bottom:16px">No nights shared yet.</p><p style="font-size:14px;color:rgba(240,235,224,0.25)">Be the first to share a memory.</p></div>’;
+  container.innerHTML = '<div style="text-align:center;padding:64px 0"><p style="font-size:16px;color:rgba(240,235,224,0.4);margin-bottom:16px">No nights shared yet.</p><p style="font-size:14px;color:rgba(240,235,224,0.25)">Be the first to share a memory.</p></div>';
   return;
 }
-var html = ‘’;
+var html = '';
 nightsData.forEach(function(n) {
-  html += ‘<div class="card"><h3 style="margin-bottom:4px">’ + n.film + ‘</h3>’;
-  if(n.director) html += ‘<p style="font-size:13px;color:rgba(240,235,224,0.4)">Dir. ‘ + n.director + (n.year ? ‘ &middot; ‘ + n.year : ‘’) + ‘</p>’;
-  html += ‘<p style="font-size:15px;line-height:1.8;color:rgba(240,235,224,0.6);margin-top:12px;font-style:italic">"’ + n.moment + ‘"</p>’;
-  html += ‘<p style="font-size:12px;color:rgba(240,235,224,0.3);margin-top:12px">— ‘ + n.name + (n.town ? ‘, ‘ + n.town : ‘’) + ‘</p></div>’;
+  html += '<div class="card"><h3 style="margin-bottom:4px">' + n.film + '</h3>';
+  if(n.director) html += '<p style="font-size:13px;color:rgba(240,235,224,0.4)">Dir. ' + n.director + (n.year ? ' &middot; ' + n.year : '') + '</p>';
+  html += '<p style="font-size:15px;line-height:1.8;color:rgba(240,235,224,0.6);margin-top:12px;font-style:italic">"' + n.moment + '"</p>';
+  html += '<p style="font-size:12px;color:rgba(240,235,224,0.3);margin-top:12px">— ' + n.name + (n.town ? ', ' + n.town : '') + '</p></div>';
 });
 container.innerHTML = html;
 }
 
 function renderVenues() {
-var container = document.getElementById(‘venues-list’);
+var container = document.getElementById('venues-list');
 if(!container) return;
 if(venuesData.length === 0) {
-  container.innerHTML = ‘<div style="text-align:center;padding:64px 0"><p style="font-size:16px;color:rgba(240,235,224,0.4);margin-bottom:16px">No venues submitted yet.</p><p style="font-size:14px;color:rgba(240,235,224,0.25)">Know a spot? Add the first venue.</p></div>’;
+  container.innerHTML = '<div style="text-align:center;padding:64px 0"><p style="font-size:16px;color:rgba(240,235,224,0.4);margin-bottom:16px">No venues submitted yet.</p><p style="font-size:14px;color:rgba(240,235,224,0.25)">Know a spot? Add the first venue.</p></div>';
   return;
 }
-var html = ‘’;
+var html = '';
 venuesData.forEach(function(v) {
-  html += ‘<div class="card"><h3 style="margin-bottom:4px">’ + v.name + ‘</h3>’;
-  html += ‘<p style="font-size:13px;color:rgba(240,235,224,0.4)">’ + v.town + (v.type ? ‘ &middot; ‘ + v.type : ‘’) + (v.capacity ? ‘ &middot; Capacity: ‘ + v.capacity : ‘’) + ‘</p>’;
-  if(v.note) html += ‘<p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5);margin-top:12px;font-style:italic">"’ + v.note + ‘"</p>’;
-  html += ‘</div>’;
+  html += '<div class="card"><h3 style="margin-bottom:4px">' + v.name + '</h3>';
+  html += '<p style="font-size:13px;color:rgba(240,235,224,0.4)">' + v.town + (v.type ? ' &middot; ' + v.type : '') + (v.capacity ? ' &middot; Capacity: ' + v.capacity : '') + '</p>';
+  if(v.note) html += '<p style="font-size:14px;line-height:1.7;color:rgba(240,235,224,0.5);margin-top:12px;font-style:italic">"' + v.note + '"</p>';
+  html += '</div>';
 });
 container.innerHTML = html;
 }
 
 function renderHeatmap() {
-var container = document.getElementById(‘heatmap-towns’);
+var container = document.getElementById('heatmap-towns');
 if(!container) return;
 if(townsData.length === 0) {
-  container.innerHTML = ‘<div style="padding:24px 0"><p style="font-size:14px;color:rgba(240,235,224,0.3)">Town data populates as Renegades join.</p></div>’;
+  container.innerHTML = '<div style="padding:24px 0"><p style="font-size:14px;color:rgba(240,235,224,0.3)">Town data populates as Renegades join.</p></div>';
   return;
 }
-var html = ‘’;
+var html = '';
 townsData.forEach(function(t) {
-  html += ‘<div class="map-town"><div><span class="town-dot"></span>’ + t.name + ‘</div><div style="font-size:13px;color:#c0392b">’ + t.count + ‘ Renegades</div></div>’;
+  html += '<div class="map-town"><div><span class="town-dot"></span>' + t.name + '</div><div style="font-size:13px;color:#c0392b">' + t.count + ' Renegades</div></div>';
 });
 container.innerHTML = html;
 }
 
 function renderFaq() {
-var container = document.getElementById(‘faq-list’);
+var container = document.getElementById('faq-list');
 if(!container) return;
-var html = ‘’;
+var html = '';
 faqData.forEach(function(item, i) {
-  html += ‘<div class="faq-item" onclick="toggleFaq(‘ + i + ‘)">’;
-  html += ‘<div class="faq-q"><span>’ + item.q + ‘</span><span id="faq-icon-’ + i + ‘" style="font-size:20px;color:rgba(240,235,224,0.3)">+</span></div>’;
-  html += ‘<div class="faq-a" id="faq-a-’ + i + ‘">’ + item.a + ‘</div>’;
-  html += ‘</div>’;
+  html += '<div class="faq-item" onclick="toggleFaq(' + i + ')">';
+  html += '<div class="faq-q"><span>' + item.q + '</span><span id="faq-icon-' + i + '" style="font-size:20px;color:rgba(240,235,224,0.3)">+</span></div>';
+  html += '<div class="faq-a" id="faq-a-' + i + '">' + item.a + '</div>';
+  html += '</div>';
 });
 container.innerHTML = html;
 }
 
 function toggleFaq(i) {
-var el = document.getElementById(‘faq-a-’ + i);
-var icon = document.getElementById(‘faq-icon-’ + i);
+var el = document.getElementById('faq-a-' + i);
+var icon = document.getElementById('faq-icon-' + i);
 if(!el) return;
-if(el.style.display === ‘block’) {
-  el.style.display = ‘none’;
-  if(icon) icon.textContent = ‘+’;
+if(el.style.display === 'block') {
+  el.style.display = 'none';
+  if(icon) icon.textContent = '+';
 } else {
-  el.style.display = ‘block’;
-  if(icon) icon.textContent = ‘-’;
+  el.style.display = 'block';
+  if(icon) icon.textContent = '-';
 }
 }
 
 // ── INIT ──
-show(‘home’);
+show('home');
 </script>
 </body>
 </html>
